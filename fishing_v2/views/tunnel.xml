@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="tunnel_search_view" model="ir.ui.view">
+            <field name="name">fish.detail.tunnel.search</field>
+            <field name="model">fishing.reception.detail</field>
+            <field name="arch" type="xml">
+                <search string="Fish Details">
+                    <field name="article"/>
+                    <field name="reception_id"/>
+                    <field name="type"/>
+                    <group>
+                        <filter string="Not tunneled"
+                                name="is_ready_for_tunnel"
+                                domain="[]"
+                        />
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="tunnel_tree_view" model="ir.ui.view">
+            <field name="name">fishing.reception.detail.tree</field>
+            <field name="model">fishing.reception.detail</field>
+            <field name="arch" type="xml">
+                <tree string="Reception" create="false">
+                    <field name="article" readonly="True" options="{'no_open':True}"/>
+                    <field name="reception_id" readonly="True" options="{'no_open':True}"/>
+                    <field name="qte" readonly="True"/>
+                    <field name="quality" readonly="True"/>
+                    <field name="status" readonly="True"/>
+                    <field name="is_paused" invisible="1"/>
+                    <field name="type" readonly="True"/>
+                    <field name="tunnel_id" readonly="True"/>
+                    <field name="tunnel_start_date" readonly="True"/>
+                    <field name="tunnel_end_date" readonly="True"/>
+                    <button name="start_tunnel" string="Start tunnels" type="object" class="oe_highlight"
+                            attrs="{'invisible': [('status', '=', '3')]}"/>
+                    <button name="validate_tunnel"
+                            string="Validate tunnels"
+                            type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible': ['|',('status', '!=', '3'), ('is_paused', '=', True)]}"
+                    />
+                    <button name="pause_operation" string="Pause operation" type="object" class="oe_highlight"
+                            attrs="{'invisible': ['|', ('is_paused', '=', True), ('status', '!=', '3')]}"/>
+
+                    <button name="resume_operation" string="Resume operation" type="object" class="oe_highlight"
+                            attrs="{'invisible': [('is_paused', '=', False)]}"/>
+
+
+                </tree>
+            </field>
+        </record>
+
+        <record id="tunnel_window" model="ir.actions.act_window">
+            <field name="name">Quantities to put in tunnel</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fishing.reception.detail</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="view_id" ref="tunnel_tree_view"/>
+            <field name="context">{'search_default_is_ready_for_tunnel': 1}</field>
+            <field name="search_view_id" ref="tunnel_search_view"/>
+            <field name="domain">[('will_be_tunneled', '=', True), ('status', 'in', ['2','3'])]
+            </field>
+            <field name="help" type="html">
+                <p>
+                    No records to put in tunnels for now
+                </p>
+                <p>
+                    Treated quantities will be shown here
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Tunnel"
+                  id="menu_sc_tunnels"
+                  parent="fishing_operations"
+                  sequence="4"
+                  action="tunnel_window"
+                  groups="fishing_admin,group_has_tunnel"
+
+        />
+
+    </data>
+</odoo>

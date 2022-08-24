@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="fishing_production_day_report">
+
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <h3 class="text-center font-weight-bold">Production report</h3>
+                    <div class="text-center">
+                        <strong>Date :</strong>
+                        <t t-esc="day"/>
+                    </div>
+                    <br/>
+                    <table style="width:100%; border: 1px solid black;border-collapse: collapse;">
+                        <tr class="text-center" style="background-color:#E0E0E0;">
+                            <th style="border: 1px solid black;border-collapse: collapse;">Product</th>
+                            <th style="border: 1px solid black;border-collapse: collapse;">Type</th>
+                            <th style="border: 1px solid black;border-collapse: collapse;">Received Qnty</th>
+                            <th style="border: 1px solid black;border-collapse: collapse;">Packed Qnty</th>
+                            <th style="border: 1px solid black;border-collapse: collapse;">Used films</th>
+                            <th style="border: 1px solid black;border-collapse: collapse;">Used boxes</th>
+                            <th style="border: 1px solid black;border-collapse: collapse;">Scums</th>
+
+
+                        </tr>
+
+                        <t>
+                            <t t-foreach="lines" t-as="line">
+                                <tr>
+                                    <td style="border: 1px solid black;border-collapse: collapse;" class="text-end">
+                                        <t t-esc="line['product']"/>
+                                    </td>
+                                    <td style="border: 1px solid black;border-collapse: collapse;" class="text-center">
+                                        <t t-esc="line['type']"/>
+                                    </td>
+                                    <td style="border: 1px solid black;border-collapse: collapse;" class="text-right">
+                                        <t t-esc="line['received_qty']"/>
+                                    </td>
+                                    <td style="border: 1px solid black;border-collapse: collapse;" class="text-right">
+                                        <t t-esc="line['packed_qty']"/>
+                                    </td>
+                                    <td style="border: 1px solid black;border-collapse: collapse;" class="text-right">
+                                        <t t-esc="line['treatment_films_qty']"/>
+                                    </td>
+                                    <td style="border: 1px solid black;border-collapse: collapse;" class="text-right">
+                                        <t t-esc="line['used_boxes']"/>
+                                    </td>
+                                    <td style="border: 1px solid black;border-collapse: collapse;" class="text-right">
+                                        <t t-esc="line['treatment_scum_qty']"/>
+                                    </td>
+                                </tr>
+                            </t>
+                            <tr class="font-weight-bold">
+
+                                <td style="border: 1px solid black;border-collapse: collapse;" class="text-center"
+                                    colspan="2">
+                                    Totals
+                                </td>
+                                <td style="border: 1px solid black;border-collapse: collapse;" class="text-right">
+                                    <t t-esc="totals['received_qty']"/>
+                                </td>
+                                <td style="border: 1px solid black;border-collapse: collapse;" class="text-right">
+                                    <t t-esc="totals['packed_qty']"/>
+                                </td>
+                                <td style="border: 1px solid black;border-collapse: collapse;" class="text-right">
+                                    <t t-esc="totals['treatment_films_qty']"/>
+                                </td>
+                                <td style="border: 1px solid black;border-collapse: collapse;" class="text-right">
+                                    <t t-esc="totals['used_boxes']"/>
+                                </td>
+                                <td style="border: 1px solid black;border-collapse: collapse;" class="text-right">
+                                    <t t-esc="totals['treatment_scum_qty']"/>
+                                </td>
+                            </tr>
+                        </t>
+
+
+                    </table>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <h3 class="text-center font-weight-bold">Stops</h3>
+                    <br/>
+                    <table style="width:100%; border: 1px solid black;border-collapse: collapse;">
+                        <tr class="text-center" style="background-color:#E0E0E0;">
+                            <th style="border: 1px solid black;border-collapse: collapse;">Start</th>
+                            <th style="border: 1px solid black;border-collapse: collapse;">End</th>
+                            <th style="border: 1px solid black;border-collapse: collapse;">Operation</th>
+                            <th style="border: 1px solid black;border-collapse: collapse;">Reason</th>
+                        </tr>
+                        <t>
+                            <t t-foreach="stops" t-as="stop">
+                                <tr>
+                                    <td style="border: 1px solid black;border-collapse: collapse;" class="text-center">
+                                        <t t-esc="stop['start']"/>
+                                    </td>
+                                    <td style="border: 1px solid black;border-collapse: collapse;" class="text-center">
+                                        <t t-esc="stop['end']"/>
+                                    </td>
+                                    <td style="border: 1px solid black;border-collapse: collapse;" class="text-center">
+                                        <t t-esc="stop['operation']"/>
+                                    </td>
+                                    <td style="border: 1px solid black;border-collapse: collapse;" class="text-center">
+                                        <t t-esc="stop['raison']"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </t>
+                    </table>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <h5 class="font-weight-bold">Opening time :
+                        <t t-esc="opening_time"/>
+                    </h5>
+                    <h5 class="font-weight-bold">Production time :
+                        <t t-esc="production_time"/>
+                    </h5>
+                    <h5 class="font-weight-bold">Quality rate :
+                        <t t-esc="quality_rate"/>
+                        %
+                    </h5>
+                    <h5 class="font-weight-bold">Performance rate :
+                        <t t-esc="performance_rate"/>
+                        %
+                    </h5>
+                </div>
+            </t>
+        </t>
+
+    </template>
+</odoo>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- production report -->
+    <record id="day_report" model="ir.actions.report">
+        <field name="name">Day report</field>
+        <field name="model">production.day.report.wizard</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">fishing_v2.fishing_production_day_report</field>
+        <field name="report_file">fishing_v2.fishing_production_day_report</field>
+        <field name="binding_model_id" ref="model_production_day_report_wizard"/>
+        <field name="binding_type">report</field>
+    </record>
+     <!-- Pallet report -->
+    <record id="action_report_pallet_barcode" model="ir.actions.report">
+        <field name="name">Pallet Barcode with Content</field>
+        <field name="model">stock.pallet</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">fishing_v2.report_pallet_barcode</field>
+        <field name="report_file">fishing_v2.report_pallet_barcode</field>
+        <field name="binding_model_id" ref="model_stock_pallet"/>
+        <field name="binding_type">report</field>
+    </record>
+    <!-- reception report -->
+    <record id="reception_report" model="ir.actions.report">
+        <field name="name">Reception sheet</field>
+        <field name="model">fishing.reception</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">fishing_v2.reception_report_template</field>
+        <field name="report_file">fishing_v2.reception_report_template</field>
+        <field name="binding_model_id" ref="model_fishing_reception"/>
+        <field name="binding_type">report</field>
+    </record>
+    <!-- service_exit_report report -->
+    <record id="service_exit_report" model="ir.actions.report">
+        <field name="name">Stock sheet</field>
+        <field name="model">fish.service.stock</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">fishing_v2.service_exit_report_template</field>
+        <field name="report_file">fishing_v2.service_exit_report_template</field>
+        <field name="binding_model_id" ref="model_fish_service_stock"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <!-- Letter report -->
+    <record id="letter_report" model="ir.actions.report">
+        <field name="name">Letter-</field>
+        <field name="model">letter.report.wizard</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">fishing_v2.fishing_letter_report</field>
+        <field name="report_file">fishing_v2.fishing_letter_report</field>
+        <field name="binding_model_id" ref="model_letter_report_wizard"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

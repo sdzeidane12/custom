@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="action_open_service_invoices" model="ir.actions.act_window">
+            <field name="name">Invoices</field>
+            <field name="res_model">account.move</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="view_id" ref="account.view_invoice_tree"/>
+            <field name="search_view_id" ref="account.view_account_invoice_filter"/>
+            <field name="domain">[('stock_service_id', '=', active_id)]</field>
+        </record>
+        <record id="action_open_service_exists" model="ir.actions.act_window">
+            <field name="name">History</field>
+            <field name="res_model">fish.service.stock.exit</field>
+            <field name="view_mode">tree,kanban,form</field>
+
+            <field name="domain">[('stock_service_id', '=', active_id)]</field>
+        </record>
+
+        <record id="fishing_service_stock_form" model="ir.ui.view">
+            <field name="name">fish.service.stock.form</field>
+            <field name="model">fish.service.stock</field>
+            <field name="arch" type="xml">
+                <form string="Stock entry">
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button
+                                    name="%(action_open_service_exists)d"
+                                    type="action"
+                                    class="oe_stat_button"
+                                    icon="fa-history"
+                            >
+                                History
+                            </button>
+                            <button
+                                    name="%(action_open_service_invoices)d"
+                                    type="action"
+                                    class="oe_stat_button"
+                                    icon="fa-credit-card"
+                            >
+                                Facture
+                            </button>
+                        </div>
+
+                        <div class="oe_title">
+                            <h1>
+                                <field name="ref" placeholder="Reference"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <field name="customer_id"/>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="stock_id"/>
+                                <field name="location_id"/>
+                            </group>
+                            <group>
+                                <field name="receive_date"/>
+                                <field name="expected_exit_date"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="total" readonly="1"/>
+                            <field name="qte" invisible="1"/>
+                        </group>
+                        <notebook>
+                            <page string="Pallets">
+                                <field name="pallet_ids" domain="[('is_out', '=', False)]">
+                                    <tree string="Menu" editable="bottom">
+                                        <control>
+                                            <create name="add_pallet_control" string="Add pallet"/>
+                                        </control>
+                                        <field name="name"/>
+                                        <field name="create_date"/>
+                                        <field name="nbr_packages"/>
+                                        <field name="quantity"/>
+                                        <field name="location_id"/>
+                                        <field name="exit_status"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Packages">
+                                <field name="box_ids" editable="bottom">
+                                    <tree string="Menu" editable="bottom">
+                                        <control>
+                                            <create name="add_package_control" string="Add package"/>
+                                        </control>
+                                        <field name="ref"/>
+                                        <field name="product_id"/>
+                                        <field name="pallet_id" />
+                                        <field name="quantity"/>
+                                        <field name="location_id"/>
+                                        <field name="barcode"/>
+                                        <field name="exit_status"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="fishing_service_stock_tree" model="ir.ui.view">
+            <field name="name">fish.service.stock.tree</field>
+            <field name="model">fish.service.stock</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ref"/>
+                    <field name="customer_id"/>
+                    <field name="category_id"/>
+                    <field name="product_id"/>
+                    <field name="qte"/>
+                    <field name="stock_id"/>
+                    <field name="location_id"/>
+                    <field name="nbr_pallets"/>
+                    <field name="nbr_packages"/>
+                    <field name="receive_date"/>
+                    <field name="exit_date"/>
+                    <field name="is_ready_out" invisible="1"/>
+                    <field name="is_out" invisible="1"/>
+                    <button name="exit_stock"
+                            string="Exit"
+                            type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible': [('is_ready_out', '=', False)]}"
+                    />
+                    <button name="exit_stock_ready"
+                            string="Prepare Exit"
+                            type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible': ['|', ('is_out', '=', True), ('is_ready_out', '=', True)]}"
+                            groups="fishing_v2.fishing_admin"
+                    />
+                    <button name="exit_stock_content_ready"
+                            string="Prepare Content Exit"
+                            type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible': ['|', ('is_out', '=', True), ('is_ready_out', '=', True)]}"
+                            groups="fishing_v2.fishing_admin"
+                    />
+                </tree>
+            </field>
+        </record>
+
+        <record id="fishing_service_stock_window" model="ir.actions.act_window">
+            <field name="name">Service stocks</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fish.service.stock</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('is_out', '=', False)]</field>
+        </record>
+
+        <!--  service package form view -->
+        <record id="service_package_form" model="ir.ui.view">
+            <field name="name">fish.service.stock.caisse.form</field>
+            <field name="model">fish.service.stock.caisse</field>
+            <field name="arch" type="xml">
+                <form string="Stock entry">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="ref" placeholder="Reference"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="stock_service_id"/>
+                            </group>
+                            <group>
+                                <field name="customer_id"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="product_id"/>
+                            </group>
+                            <group>
+                                <field name="quantity"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="pallet_id"/>
+                            </group>
+                            <group>
+                                <field name="location_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--  service package search view -->
+        <record id="service_package_search" model="ir.ui.view">
+            <field name="name">fish.service.stock.caisse.search</field>
+            <field name="model">fish.service.stock.caisse</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="ref"/>
+                    <field name="customer_id"/>
+                    <field name="stock_service_id"/>
+                    <field name="location_id"/>
+                    <field name="product_id"/>
+                    <field name="barcode"/>
+                    <group>
+                        <!-- begin Filter -->
+                        <filter string="In stock" name="status_is_in_stock" domain="[('is_out','=',False)]"/>
+                        <!-- end Filter -->
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!--  service package tree view -->
+        <record id="service_package_tree" model="ir.ui.view">
+            <field name="name">fish.service.stock.caisse.tree</field>
+            <field name="model">fish.service.stock.caisse</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ref"/>
+                    <field name="product_id"/>
+                    <field name="linked_pallet_id"/>
+                    <field name="location_id"/>
+                    <field name="barcode"/>
+                    <field name="linked_stock_service_id"/>
+                    <field name="customer_id"/>
+                    <field name="quantity"/>
+                    <field name="is_ready_out" invisible="1"/>
+                    <button name="exit_stock"
+                            string="Exit"
+                            type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible': [('is_ready_out', '=', False)]}"
+                    />
+                </tree>
+            </field>
+        </record>
+        <!--  service package exit action button
+        <record id="action_server_exit_package" model="ir.actions.server">
+            <field name="name">Exit</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_fish_service_stock_caisse"/>
+            <field name="binding_model_id" ref="model_fish_service_stock_caisse"/>
+            <field name="state">code</field>
+            <field name="code">records.exit_stock()</field>
+        </record>
+        -->
+        <!--  service package action -->
+        <record id="action_service_package_view" model="ir.actions.act_window">
+            <field name="name">Service packages</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fish.service.stock.caisse</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="search_view_id" ref="service_package_search"/>
+            <field name="domain">[('is_out', '=', False)]</field>
+            <field name="context">{'search_default_status_is_in_stock': 1}</field>
+        </record>
+
+        <!--  service pallet tree view -->
+        <record id="service_pallet_tree" model="ir.ui.view">
+            <field name="name">stock.pallet.tree</field>
+            <field name="model">stock.service.pallet</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="nbr_packages"/>
+                    <field name="quantity"/>
+                    <field name="barcode"/>
+                    <field name="linked_stock_service_id"/>
+                    <field name="customer_id"/>
+                    <field name="location_id"/>
+                    <field name="is_ready_out" invisible="1"/>
+                    <button name="exit_stock"
+                            string="Exit"
+                            type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible': [('is_ready_out', '=', False)]}"
+                    />
+                </tree>
+            </field>
+        </record>
+
+        <!--  service pallet form view -->
+        <record id="service_pallet_form" model="ir.ui.view">
+            <field name="name">fish.service.stock.pallet.form</field>
+            <field name="model">stock.service.pallet</field>
+            <field name="arch" type="xml">
+                <form string="Stock entry">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="Reference" readonly="1"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <field name="customer_id"/>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="stock_service_id"/>
+                                <field name="location_id"/>
+                            </group>
+                            <group>
+                                <field name="receive_date"/>
+                                <field name="expected_exit_date"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="quantity"/>
+                        </group>
+                        <notebook>
+                            <page string="Packages">
+                                <field name="box_ids">
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--  service pallet exit action button
+        <record id="action_server_exit_pallet" model="ir.actions.server">
+            <field name="name">Exit</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_stock_service_pallet"/>
+            <field name="binding_model_id" ref="model_stock_service_pallet"/>
+            <field name="state">code</field>
+            <field name="code">records.exit_stock()</field>
+        </record>
+-->
+        <!--  service pallet action -->
+        <record id="action_service_pallets_view" model="ir.actions.act_window">
+            <field name="name">Service pallets</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">stock.service.pallet</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('is_out', '=', False)]</field>
+
+        </record>
+
+        <!--  service exits action -->
+        <record id="stock_exits_report_window" model="ir.actions.act_window">
+            <field name="name">Exits history</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fish.service.stock.exit</field>
+            <field name="view_mode">tree,form,search</field>
+        </record>
+        <!--  service exits  tree view -->
+        <record id="stock_exits_tree" model="ir.ui.view">
+            <field name="name">fish.service.stock.exit.tree</field>
+            <field name="model">fish.service.stock.exit</field>
+            <field name="arch" type="xml">
+                <tree create="0" edit="0">
+                    <field name="stock_service_id"/>
+                    <field name="location_id"/>
+                    <field name="pallet_id"/>
+                    <field name="box_id"/>
+                    <field name="create_date" />
+                    <field name="exit_time"/>
+                    <field name="user_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--  service exits  form view -->
+        <record id="stock_exits_form" model="ir.ui.view">
+            <field name="name">fish.service.stock.exit.form</field>
+            <field name="model">fish.service.stock.exit</field>
+            <field name="arch" type="xml">
+                <form string="Stock exit" create="0" edit="0">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                Stock exit
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="stock_service_id"/>
+                                <field name="pallet_id"/>
+                                <field name="box_id"/>
+
+                            </group>
+                            <group>
+                                <field name="exit_time"/>
+                                <field name="user_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <menuitem name="Stock"
+                  id="fishing_stock_root_menu"
+                  parent="base.menu_sc_root"
+                  sequence="4"
+        />
+
+        <menuitem name="Production"
+                  id="fishing_production_stock"
+                  parent="fishing_stock_root_menu"
+                  sequence="1"
+        />
+        <menuitem name="Products"
+                  id="fishing_production_stock_products"
+                  parent="fishing_production_stock"
+                  sequence="1"
+                  action="stock.product_template_action_product"
+        />
+        <menuitem name="Packages"
+                  id="fishing_production_stock_packages"
+                  parent="fishing_production_stock"
+                  sequence="2"
+                  action="stock.action_package_view"
+        />
+        <menuitem name="Pallets"
+                  id="fishing_production_stock_pallets"
+                  parent="fishing_production_stock"
+                  sequence="2"
+                  action="action_pallets_view"
+        />
+        <menuitem name="Service"
+                  id="fishing_service_stock"
+                  parent="fishing_stock_root_menu"
+                  sequence="2"
+                  groups="fishing_admin,group_has_service_stock"
+        />
+        <menuitem name="Service stocks"
+                  id="fishing_service_stocks"
+                  parent="fishing_service_stock"
+                  sequence="1"
+                  action="fishing_service_stock_window"
+
+        />
+        <menuitem name="Packages"
+                  id="fishing_service_stock_packages"
+                  parent="fishing_service_stock"
+                  sequence="2"
+                  action="action_service_package_view"
+        />
+        <menuitem name="Pallets"
+                  id="fishing_service_stock_pallets"
+                  parent="fishing_service_stock"
+                  sequence="2"
+                  action="action_service_pallets_view"
+        />
+
+    </data>
+</odoo>

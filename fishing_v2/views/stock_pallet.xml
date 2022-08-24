@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!--  inherit package form to add barcode -->
+        <record id="package_view_form" model="ir.ui.view">
+            <field name="name">stock.quant.package.form</field>
+            <field name="model">stock.quant.package</field>
+            <field name="inherit_id" ref="stock.view_quant_package_form"/>
+            <field name="arch" type="xml">
+                <group id="stock.package_location_group" position="after">
+                    <group>
+                        <field name="barcode" readonly="1"/>
+                        <field name="pallet_id" options="{'no_create': True}"/>
+                    </group>
+                </group>
+            </field>
+        </record>
+
+        <!--  inherit package tree to add barcode -->
+        <record id="package_view_tree" model="ir.ui.view">
+            <field name="name">stock.quant.package.tree</field>
+            <field name="model">stock.quant.package</field>
+            <field name="inherit_id" ref="stock.view_quant_package_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='location_id']" position="before">
+                    <field name="product_id"/>
+                    <field name="quantity"/>
+                    <field name="pallet_id"/>
+                    <field name="barcode"/>
+                </xpath>
+            </field>
+        </record>
+  <!--  inherit product tree to add pallets nbr -->
+        <record id="product_view_tree" model="ir.ui.view">
+            <field name="name">product.template.tree</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='responsible_id']" position="after">
+                    <field name="count_packages"/>
+                    <field name="count_pallets"/>
+                </xpath>
+            </field>
+        </record>
+  <!--  inherit product.product tree to add pallets nbr -->
+        <record id="product_product_view_tree" model="ir.ui.view">
+            <field name="name">product.product.tree</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_product_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='lst_price']" position="after">
+                    <field name="count_packages"/>
+                    <field name="count_pallets"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!--  production pallet form view -->
+        <record id="pallet_form" model="ir.ui.view">
+            <field name="name">stock.pallet.form</field>
+            <field name="model">stock.pallet</field>
+            <field name="arch" type="xml">
+                <form string="Tunnel">
+                    <header>
+                        <button name="unpack" string="Unpack" type="object"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="barcode" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="location_id"/>
+                            </group>
+                        </group>
+                        <field name="pack_ids"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--  production pallet tree view -->
+        <record id="pallet_tree" model="ir.ui.view">
+            <field name="name">stock.pallet.tree</field>
+            <field name="model">stock.pallet</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="quantity"/>
+                    <field name="barcode"/>
+                    <field name="location_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--  production pallet action -->
+        <record model="ir.actions.act_window" id="action_pallets_view">
+            <field name="context">{}</field>
+            <field name="name">Pallets</field>
+            <field name="res_model">stock.pallet</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new pallet
+                </p>
+                <p>
+                    Pallets are usually created via transfers (during pack operation) and can contain different
+                    products.
+                    Once created, the whole pallet can be moved at once, or products can be unpacked and moved as
+                    single units again.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_pallet" name="Pallets" parent="stock.menu_stock_inventory_control"
+                  action="action_pallets_view" groups="stock.group_tracking_lot" sequence="104"/>
+    </data>
+</odoo>

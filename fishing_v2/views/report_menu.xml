@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- fishing.operation.stop tree view -->
+        <record id="stops_report_tree" model="ir.ui.view">
+            <field name="name">fishing.operation.stop.tree</field>
+            <field name="model">fishing.operation.stop</field>
+            <field name="arch" type="xml">
+                <tree create="false" edit="false" delete="false">
+                    <field name="start"/>
+                    <field name="end"/>
+                    <field name="operation"/>
+                    <field name="raison"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!-- fishing.operation.stop window -->
+        <record id="stops_report_window" model="ir.actions.act_window">
+            <field name="name">Stops</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fishing.operation.stop</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem name="Reporting"
+                  id="menu_reporting"
+                  parent="base.menu_sc_root"
+                  sequence="6"
+                  groups="fishing_admin"
+        />
+        <!-- Periodic reports -->
+        <menuitem name="Periodic reports"
+                  id="periodic_reports_menu"
+                  parent="menu_reporting"
+                  sequence="1"
+        />
+        <menuitem name="Day report"
+                  id="production_day_report_menu"
+                  parent="periodic_reports_menu"
+                  sequence="1"
+                  action="day_report_window"
+        />
+        <menuitem name="Month report"
+                  id="production_month_report_menu"
+                  parent="periodic_reports_menu"
+                  sequence="2"
+                  action="month_report_window"
+        />
+        <menuitem name="Year report"
+                  id="production_year_report_menu"
+                  parent="periodic_reports_menu"
+                  sequence="3"
+                  action="year_report_window"
+        />
+        <menuitem name="Costs report"
+                  id="costs_report_menu"
+                  parent="periodic_reports_menu"
+                  sequence="4"
+                  action="costs_report_window"
+        />
+
+        <!-- Operations -->
+        <menuitem name="Operations"
+                  id="operation_reports_menu"
+                  parent="menu_reporting"
+                  sequence="2"
+        />
+
+        <menuitem name="Stops"
+                  id="stops_report_menu"
+                  parent="operation_reports_menu"
+                  sequence="1"
+                  action="stops_report_window"
+        />
+
+        <!-- Stock -->
+        <menuitem name="Stock"
+                  id="service_stock_reports_menu"
+                  parent="menu_reporting"
+                  sequence="3"
+        />
+
+        <menuitem name="History"
+                  id="stock_exits_report_menu"
+                  parent="service_stock_reports_menu"
+                  sequence="1"
+                  action="stock_exits_report_window"
+        />
+
+        <!-- Printing -->
+        <menuitem name="Printing"
+                  id="printing_menu"
+                  parent="menu_reporting"
+                  sequence="4"
+        />
+
+        <menuitem name="Letters"
+                  id="customs_report_menu"
+                  parent="printing_menu"
+                  sequence="1"
+                  action="letter_report_window"
+        />
+    </data>
+</odoo>

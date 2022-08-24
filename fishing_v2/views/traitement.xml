@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="treatment_search_view" model="ir.ui.view">
+            <field name="name">fish.detail.treatment.search</field>
+            <field name="model">fishing.reception.detail</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="article"/>
+                    <field name="reception_id"/>
+                    <field name="type"/>
+                    <group>
+                        <!-- begin Filter -->
+                        <filter string="Not treated" name="status_not_treated" domain="[('status','!=','2')]"/>
+                        <!-- end Filter -->
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="traitement_form_view" model="ir.ui.view">
+            <field name="name">fishing.reception.detail.form</field>
+            <field name="model">fishing.reception.detail</field>
+            <field name="arch" type="xml">
+                <form string="Reception" create="false" edit="false">
+                    <header>
+                        <field name="tr_canceled" invisible="1"/>
+                        <field name="tr_cancelable" invisible="1"/>
+                        <field name="tn_canceled" invisible="1"/>
+                        <field name="tn_cancelable" invisible="1"/>
+                        <field name="status" invisible="1"/>
+                        <button
+                                name="action_cancel_tr"
+                                type="object"
+                                string="Cancel treatment"
+                                attrs="{'disabled': ['|', ('tr_cancelable', '=', False), ('tr_canceled', '=', True)],'invisible': [('status', '=', '0')]}"
+                                class="oe_highlight"
+                        />
+                        <button
+                                name="action_cancel_tn"
+                                type="object"
+                                string="Cancel freezing"
+                                attrs="{'disabled': ['|', ('tn_cancelable', '=', False), ('tn_canceled', '=', True)],'invisible': [('status', 'not in', ['3', '4'])]}"
+                                class="oe_highlight"
+                        />
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="article"/>
+                                <field name="qte"/>
+                            </group>
+                            <group>
+                                <field name="reception_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="traitement_tree_view" model="ir.ui.view">
+            <field name="name">fishing.reception.detail.tree</field>
+            <field name="model">fishing.reception.detail</field>
+            <field name="arch" type="xml">
+                <tree string="Reception" create="false">
+                    <field name="article" readonly="True" options="{'no_open':True}"/>
+                    <field name="reception_id" readonly="True" options="{'no_open':True}"/>
+                    <field name="qte" readonly="True"/>
+                    <field name="quality" readonly="True"/>
+                    <field name="status" readonly="True"/>
+                    <field name="is_paused" invisible="1"/>
+                    <field name="type" readonly="True"/>
+                    <field name="startdate" readonly="True"/>
+                    <field name="end_date" readonly="True"/>
+                    <field name="treatment_responsible_id" attrs="{'invisible': [('status', 'not in', ['1','2'])]}"/>
+
+                    <button name="start_traitement" string="Start treatment" type="object" class="oe_highlight"
+                            attrs="{'invisible': [('status', '!=', '0')]}"/>
+                    <button name="validate_treatment"
+                            string="Validate  treatment"
+                            type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible': ['|',('status', '!=', '1'), ('is_paused', '=', True)]}"
+                    />
+                    <button name="start_tunnel" string="Start tunnels" type="object" class="oe_highlight"
+                            attrs="{'invisible': [('status', '!=', '2')]}"/>
+                    <button name="validate_tunnel"
+                            string="Validate tunnels"
+                            type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible': ['|',('status', '!=', '3'), ('is_paused', '=', True)]}"
+                    />
+                    <button name="start_packaging" string="Start Packaging" type="object" class="oe_highlight"
+                            attrs="{'invisible': [('status', 'not in', ['4','5'])]}"/>
+                    <button name="pause_operation" string="Pause operation" type="object" class="oe_highlight"
+                            attrs="{'invisible': ['|', ('is_paused', '=', True), ('status', 'not in', ['1', '3','5'])]}"/>
+
+                    <button name="resume_operation" string="Resume operation" type="object" class="oe_highlight"
+                            attrs="{'invisible': [('is_paused', '=', False)]}"/>
+
+
+                </tree>
+            </field>
+        </record>
+
+        <record id="traitement_window" model="ir.actions.act_window">
+            <field name="name">Quantities to treat</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fishing.reception.detail</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="view_id" ref="traitement_tree_view"/>
+            <field name="domain">[
+                ('qte','>','0'),
+                ('treatment_ordered', '=', True), ('status', 'in', ['0','1'])]
+            </field>
+            <field name="context">{'search_default_status_not_treated': 1}</field>
+            <field name="search_view_id" ref="treatment_search_view"/>
+            <field name="help" type="html">
+                <p>
+                    No quantities to treat for now
+                </p>
+                <p>
+                    New received quantities will be shown here
+                </p>
+            </field>
+
+        </record>
+
+        <menuitem name="Treatment"
+                  id="menu_sc_traitement"
+                  parent="fishing_operations"
+                  sequence="3"
+                  action="traitement_window"
+                  groups="fishing_admin,group_has_treatment"
+        />
+
+    </data>
+</odoo>
