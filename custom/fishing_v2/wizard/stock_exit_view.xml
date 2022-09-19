@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="stock_exit_form_view" model="ir.ui.view">
+        <field name="name">fishing.service.stock.wizard.form</field>
+        <field name="model">fishing.service.stock.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Quantity">
+                <h3 class="text-center">Would you like to invoice this stock</h3>
+                <group>
+                    <group>
+                        <field name="will_invoice"/>
+                    </group>
+                    <group attrs="{'invisible': [('will_invoice', '=', False)]}">
+                        <field name="invoice_per"/>
+                        <field name="custom_invoice_per" invisible="1"/>
+                    </group>
+                </group>
+                <div attrs="{'invisible': [('will_invoice', '=', False)]}">
+                    <group>
+                        <group>
+                            <field name="start"/>
+
+                        </group>
+                        <group>
+                            <field name="end"/>
+                        </group>
+                    </group>
+                    <table style="width: 100%">
+                        <tr>
+                            <td style="width: 25%" class="text-right">
+                                <strong>Total duration :</strong>
+                            </td>
+                            <td style="width: 10%" class="text-left">
+                                <field name="total_duration" class="mt-2"/>
+                                
+                                 <field name="custom_invoice_per"  readonly="1" />
+                            </td>
+                            <td style="width: 30%" class="text-right">
+                                <strong>Price per
+                                    <field name="custom_invoice_per" readonly="1"/>
+                                </strong>
+                            </td>
+                            <td style="width: 35%">
+                                <field name="unit_price"/>
+                            </td>
+
+                        </tr>
+
+                    </table>
+                </div>
+
+
+                <footer>
+                    <button type="object" name="action_exit" string="Submit" class="btn-primary"/>
+                    <button special="cancel" string="Close" class="btn-secondary"/>
+                </footer>
+            </form>
+
+        </field>
+    </record>
+
+    <record id="stock_content_exit_form_view" model="ir.ui.view">
+        <field name="name">stock.content.wizard.form</field>
+        <field name="model">stock.content.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Quantity">
+                <h3 class="text-center">Would you like to invoice this stock</h3>
+                <group>
+                    <group>
+                        <field name="will_invoice"/>
+                    </group>
+                    <group attrs="{'invisible': [('will_invoice', '=', False)]}">
+                        <field name="invoice_per"/>
+                    </group>
+                </group>
+                <div>
+                    <field name="show_pallets"/>
+                    <strong>Pallets</strong>
+                    <field name="pallet_ids" domain="[('stock_service_id','=', active_id),('is_out', '=', False)]"
+                           attrs="{'invisible': [('show_pallets', '=', False)]}"/>
+                </div>
+                <div>
+                    <field name="show_boxes"/>
+                    <strong>Packages</strong>
+                    <field name="box_ids" domain="[('stock_service_id','=', active_id),('is_out', '=', False)]"
+                           attrs="{'invisible': [('show_boxes', '=', False)]}"/>
+                </div>
+
+                <div attrs="{'invisible': [('will_invoice', '=', False)]}">
+                    <group>
+                        <group>
+                            <field name="start"/>
+
+                        </group>
+                        <group>
+                            <field name="end"/>
+                        </group>
+                    </group>
+                    <table style="width: 100%">
+                        <tr>
+                            <td style="width: 25%" class="text-right">
+                                <strong>Total duration :</strong>
+                            </td>
+                            <td style="width: 10%" class="text-left">
+                                <field name="total_duration" class="mt-2"/>
+                                 <field name="invoice_per" readonly="1"/>
+                            </td>
+                            <td style="width: 30%" class="text-right">
+                                <strong>Price per
+                                    <field name="invoice_per" readonly="1"/>
+                                </strong>
+                            </td>
+                            <td style="width: 35%">
+                                <field name="unit_price"/>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <footer>
+                    <button type="object" name="action_exit" string="Submit" class="btn-primary"/>
+                    <button special="cancel" string="Close" class="oe_highlight"/>
+                </footer>
+            </form>
+
+        </field>
+    </record>
+</odoo>

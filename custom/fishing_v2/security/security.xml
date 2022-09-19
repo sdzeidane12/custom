@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data noupdate="1">
+        <!-- Fishing multi-company rules  -->
+        <record model="ir.rule" id="fishing_reception_rule">
+            <field name="name">Fishing reception multi-company rule</field>
+            <field name="model_id" ref="model_fishing_reception"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record model="ir.rule" id="fishing_reception_line_rule">
+            <field name="name">Fishing reception line multi-company rule</field>
+            <field name="model_id" ref="model_fishing_reception_detail"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record model="ir.rule" id="fishing_reception_line_provis_rule">
+            <field name="name">Fishing reception line provisio multi-company rule</field>
+            <field name="model_id" ref="model_reception_fish_detail"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record model="ir.rule" id="fishing_service_stock_rule">
+            <field name="name">Fishing service stock multi-company rule</field>
+            <field name="model_id" ref="model_fish_service_stock"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record model="ir.rule" id="fishing_service_stock_exit_rule">
+            <field name="name">Fishing service stock exit multi-company rule</field>
+            <field name="model_id" ref="model_fish_service_stock_exit"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record model="ir.rule" id="fishing_service_stock_caisse_rule">
+            <field name="name">Fishing service stock caisse multi-company rule</field>
+            <field name="model_id" ref="model_fish_service_stock_caisse"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record model="ir.rule" id="fishing_service_stock_pallet_rule">
+            <field name="name">Fishing service stock pallet multi-company rule</field>
+            <field name="model_id" ref="model_stock_service_pallet"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record model="ir.rule" id="fishing_time_rule">
+            <field name="name">Fishing multi-company rule</field>
+            <field name="model_id" ref="model_fishing_time"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record model="ir.rule" id="fishing_tunnel_rule">
+            <field name="name">Fishing multi-company rule</field>
+            <field name="model_id" ref="model_fishing_tunnel"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record model="ir.rule" id="fishing_letter_rule">
+            <field name="name">Fishing multi-company rule</field>
+            <field name="model_id" ref="model_fishing_letter"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record model="ir.rule" id="fishing_cost_direct_rule">
+            <field name="name">Fishing multi-company rule</field>
+            <field name="model_id" ref="model_fishing_cost_direct"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record model="ir.rule" id="fishing_cost_direct_rule">
+            <field name="name">Fishing service stock exit multi-company rule</field>
+            <field name="model_id" ref="model_fishing_cost_direct"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record model="ir.rule" id="fishing_cost_indirect_rule">
+            <field name="name">Fishing reception line provisio multi-company rule</field>
+            <field name="model_id" ref="model_fishing_cost_indirect"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+        </record>
+        <record model="ir.rule" id="fishing_cost_report_rule">
+            <field name="name">Fishing reception line provisio multi-company rule</field>
+            <field name="model_id" ref="model_fishing_cost_report"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+        </record>
+        <record model="ir.rule" id="fishing_cost_report_line_rule">
+            <field name="name">Fishing reception line provisio multi-company rule</field>
+            <field name="model_id" ref="model_fishing_cost_report_line"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <!-- Fishing category  -->
+        <record id="special_fishing_right" model="ir.module.category">
+            <field name="name">Fishing</field>
+            <field name="sequence">10</field>
+        </record>
+        <!-- Group for Fishing Admin -->
+        <record id="fishing_admin" model="res.groups">
+            <field name="name">Fishing Admin</field>
+            <field
+                    name="users"
+                    eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"
+            />
+            <field name="category_id" ref="special_fishing_right"/>
+        </record>
+        <!-- Specific Fishing groups -->
+        <record id="group_has_reception" model="res.groups">
+            <field name="name">Has reception</field>
+            <field name="category_id" ref="special_fishing_right"/>
+        </record>
+        <record id="group_has_treatment" model="res.groups">
+            <field name="name">Has treatment</field>
+            <field name="category_id" ref="special_fishing_right"/>
+        </record>
+        <record id="group_has_tunnel" model="res.groups">
+            <field name="name">Has tunnel</field>
+            <field name="category_id" ref="special_fishing_right"/>
+        </record>
+
+        <record id="group_has_pcking" model="res.groups">
+            <field name="name">Has packing</field>
+            <field name="category_id" ref="special_fishing_right"/>
+        </record>
+        <record id="group_has_service_stock" model="res.groups">
+            <field name="name">Has service stock</field>
+            <field name="category_id" ref="special_fishing_right"/>
+        </record>
+        <!-- Assign Fishing Admin Group for Admin User -->
+        <record id="base.user_admin" model="res.users">
+            <field
+                    name="groups_id"
+                    eval="[(4, ref('fishing_admin'))]"
+            />
+        </record>
+    </data>
+</odoo>

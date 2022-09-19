@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- Sequences for fishing.reception -->
+        <record id="seq_fishing_reception" model="ir.sequence">
+            <field name="name">Fish Reception</field>
+            <field name="code">fish.reception</field>
+            <field name="prefix">R</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <!-- Sequences for fishing.reception.detail -->
+        <record id="seq_fishing_reception_detail" model="ir.sequence">
+            <field name="name">Fish Lot</field>
+            <field name="code">fish.reception.detail</field>
+            <field name="prefix">LTR</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <!-- Sequences for fish.service.stock -->
+        <record id="seq_fishing_service_stock" model="ir.sequence">
+            <field name="name">Service Lot</field>
+            <field name="code">fish.service.stock</field>
+            <field name="prefix">SERV</field>
+            <field name="padding">7</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <!-- Sequences for stock.pallet -->
+        <record id="seq_pallet" model="ir.sequence">
+            <field name="name">Pallets</field>
+            <field name="code">stock.pallet</field>
+            <field name="prefix">PAL</field>
+            <field name="padding">7</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <!-- Sequences for fishing.cost.direct -->
+        <record id="seq_direct_cost" model="ir.sequence">
+            <field name="name">Direct costs</field>
+            <field name="code">fishing.cost.direct</field>
+            <field name="prefix">CHRD</field>
+            <field name="padding">6</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <!-- Sequences for fishing.cost.indirect -->
+        <record id="seq_indirect_cost" model="ir.sequence">
+            <field name="name">Indirect costs</field>
+            <field name="code">fishing.cost.indirect</field>
+            <field name="prefix">CHRIN</field>
+            <field name="padding">6</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <!-- Sequences for fishing.cost.indirect -->
+        <record id="seq_cost_report" model="ir.sequence">
+            <field name="name">Costs Report</field>
+            <field name="code">fishing.cost.report</field>
+            <field name="prefix">CR</field>
+            <field name="padding">6</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <!-- Fish categories -->
+        <record id="product_category_fish" model="product.category">
+            <field name="name">Fish</field>
+        </record>
+        <!-- equipmenet categories -->
+        <record id="equipment_category_boats" model="maintenance.equipment.category">
+            <field name="name">Boats</field>
+        </record>
+
+        <record id="product_category_fresh_fish" model="product.category">
+            <field name="name">Fresh</field>
+            <field name="parent_id" ref="product_category_fish"/>
+        </record>
+
+        <record id="product_category_frozen_fish" model="product.category">
+            <field name="name">Frozen</field>
+            <field name="parent_id" ref="product_category_fish"/>
+        </record>
+
+        <record id="product_category_fish_poulpe_fresh" model="product.category">
+            <field name="parent_id" ref="product_category_fresh_fish"/>
+            <field name="name">Fresh Poulpe</field>
+        </record>
+
+        <record id="product_category_fish_poulpe_frozen" model="product.category">
+            <field name="parent_id" ref="product_category_frozen_fish"/>
+            <field name="name">Frozen Poulpe</field>
+        </record>
+
+        <!-- Fish products -->
+        <record id="product_product_2" model="product.product">
+            <field name="name">Fish</field>
+            <field name="categ_id" ref="product_category_fish"/>
+            <field name="standard_price">25</field>
+            <field name="type">product</field>
+        </record>
+
+        <!-- Packaging products -->
+        <record id="product_product_carton" model="product.product">
+            <field name="name">Carton</field>
+            <field name="categ_id" ref="product.product_category_1"/>
+            <field name="standard_price">15</field>
+            <field name="type">product</field>
+
+        </record>
+
+        <record id="product_product_poly" model="product.product">
+            <field name="name">Caisse polystyrene</field>
+            <field name="categ_id" ref="product.product_category_1"/>
+            <field name="standard_price">15</field>
+            <field name="type">product</field>
+        </record>
+
+        <record id="product_product_films" model="product.product">
+            <field name="name">Films d'emballage</field>
+            <field name="categ_id" ref="product.product_category_1"/>
+            <field name="standard_price">15</field>
+            <field name="type">product</field>
+
+        </record>
+
+
+        <!-- Fish services -->
+        <record id="product_service_tunnel" model="product.product">
+            <field name="name">Fish Tunnel</field>
+            <field name="categ_id" ref="product.product_category_1"/>
+            <field name="standard_price">2</field>
+            <field name="type">service</field>
+            <field name="property_account_income_id">701700</field>
+            <field name="property_account_expense_id">600700</field>
+        </record>
+        <record id="product_service_treatment" model="product.product">
+            <field name="name">Fish Treatment</field>
+            <field name="categ_id" ref="product.product_category_1"/>
+            <field name="standard_price">1.5</field>
+            <field name="type">service</field>
+            <field name="property_account_income_id">701700</field>
+            <field name="property_account_expense_id">600700</field>
+        </record>
+        <record id="product_service_packaging" model="product.product">
+            <field name="name">Fish Packaging</field>
+            <field name="categ_id" ref="product.product_category_1"/>
+            <field name="standard_price">1.5</field>
+            <field name="type">service</field>
+            <field name="property_account_income_id">701700</field>
+            <field name="property_account_expense_id">600700</field>
+        </record>
+        <record id="product_service_stock" model="product.product">
+            <field name="name">Fish Stock</field>
+            <field name="categ_id" ref="product.product_category_1"/>
+            <field name="standard_price">1.5</field>
+            <field name="type">service</field>
+           <field name="property_account_income_id">701700</field>
+            <field name="property_account_expense_id">600700</field>
+        </record>
+
+
+        <!-- Main stock -->
+        <record id="main_stock_id" model="stock.warehouse">
+            <field name="name">Main Stock</field>
+            <field name="code">MS</field>
+        </record>
+
+
+        <!-- Temporary production stock -->
+        <record id="temporary_id" model="stock.location">
+            <field name="name">Temporary</field>
+            <field name="usage">internal</field>
+            <field name="location_id" ref="stock.stock_location_company"/>
+        </record>
+
+
+        <!-- weight attributes -->
+        <record id="product_attribute_quantity" model="product.attribute">
+            <field name="name">Size</field>
+            <field name="sequence">2</field>
+        </record>
+        <record id="product_attribute_value_quantity_1" model="product.attribute.value">
+            <field name="name">T1</field>
+            <field name="attribute_id" ref="product_attribute_quantity"/>
+            <field name="sequence">2</field>
+        </record>
+        <record id="product_attribute_value_quantity_2" model="product.attribute.value">
+            <field name="name">T2</field>
+            <field name="attribute_id" ref="product_attribute_quantity"/>
+            <field name="sequence">2</field>
+        </record>
+        <record id="product_attribute_value_quantity_3" model="product.attribute.value">
+            <field name="name">T3</field>
+            <field name="attribute_id" ref="product_attribute_quantity"/>
+            <field name="sequence">3</field>
+        </record>
+
+        <!-- quality attributes -->
+        <record id="product_attribute_quality" model="product.attribute">
+            <field name="name">Quality</field>
+            <field name="sequence">1</field>
+        </record>
+
+        <record id="product_attribute_value_quality_scum" model="product.attribute.value">
+            <field name="name">SCUM</field>
+            <field name="attribute_id" ref="product_attribute_quality"/>
+            <field name="sequence">100</field>
+        </record>
+    </data>
+</odoo>

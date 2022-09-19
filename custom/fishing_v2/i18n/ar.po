@@ -1,0 +1,2066 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fishing
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-19 10:02+0000\n"
+"PO-Revision-Date: 2022-01-19 10:02+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: fishing
+#: code:addons/fishing/models/reception_details.py:0
+#, python-format
+msgid "pause"
+msgstr "إيقاف مؤقت"
+
+#. module: fishing
+#: model:product.attribute.value,name:fishing.product_attribute_value_quantity_205
+msgid "20.5Kg"
+msgstr "20.5كغ"
+
+#. module: fishing
+#: model:ir.model.fields.selection,name:fishing.selection__production_month_report_wizard__year__2020
+#: model:ir.model.fields.selection,name:fishing.selection__production_year_report_wizard__year__2020
+msgid "2020"
+msgstr "2020"
+
+#. module: fishing
+#: model:ir.model.fields.selection,name:fishing.selection__production_month_report_wizard__year__2021
+#: model:ir.model.fields.selection,name:fishing.selection__production_year_report_wizard__year__2021
+msgid "2021"
+msgstr "2021"
+
+#. module: fishing
+#: model:ir.model.fields.selection,name:fishing.selection__production_month_report_wizard__year__2022
+#: model:ir.model.fields.selection,name:fishing.selection__production_year_report_wizard__year__2022
+msgid "2022"
+msgstr "2022"
+
+#. module: fishing
+#: model:product.attribute.value,name:fishing.product_attribute_value_quantity_20
+msgid "20Kg"
+msgstr "20كغ"
+
+#. module: fishing
+#: model:product.attribute.value,name:fishing.product_attribute_value_quantity_215
+msgid "21.5Kg"
+msgstr "21.5كغ"
+
+#. module: fishing
+#: model:product.attribute.value,name:fishing.product_attribute_value_quantity_21
+msgid "21Kg"
+msgstr "21كغ"
+
+#. module: fishing
+#: model:product.attribute.value,name:fishing.product_attribute_value_quantity_22
+msgid "22Kg"
+msgstr "22كغ"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.new_tunnel_qty_form_view
+msgid "<span class=\"font-weight-bold\">/</span>"
+msgstr "<span class=\"font-weight-bold\">/</span>"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.reception_get_qty_form_view
+msgid ""
+"<span>\n"
+"                            Kg remaining\n"
+"                        </span>"
+msgstr ""
+"<span>\n"
+" كغ متبقي\n"
+"                        </span>"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.stock_exit_form_view
+msgid "<span>/Kg/h</span>"
+msgstr "<span>/س/كغ</span>"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.reception_report_template
+#: model_terms:ir.ui.view,arch_db:fishing.service_exit_report_template
+msgid "<strong>Customer :</strong>"
+msgstr "<strong>: زبون</strong>"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.fishing_production_day_report
+msgid "<strong>Date :</strong>"
+msgstr "<strong>: تاريخ</strong>"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.reception_report_template
+msgid "<strong>Fish seller :</strong>"
+msgstr "<strong>: بائع الأسماك</strong>"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.fishing_letter_report
+msgid "<strong>Object :</strong>"
+msgstr "<strong>: الموضوع</strong>"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.reception_report_template
+msgid "<strong>Ordered services :</strong>"
+msgstr "<strong>: الخدمات المطلوبة</strong>"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.stock_exit_form_view
+msgid "<strong>Price per Kg per hour</strong>"
+msgstr "<strong>سعر الكيلوغرام بالساعة </strong>"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.service_exit_report_template
+msgid ""
+"<strong>Product :</strong>\n"
+"                                    <br/>"
+msgstr ""
+"<strong>: المنتج</strong>\n"
+"                                    <br/>"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.reception_report_template
+msgid ""
+"<strong>Products :</strong>\n"
+"                                    <br/>"
+msgstr ""
+"<strong>: المنتجات </strong>\n"
+"                                    <br/>"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.stock_exit_form_view
+msgid "<strong>Total hours :</strong>"
+msgstr "<strong>: مجموع الساعات</strong>"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.reception_report_template
+msgid "<strong>Type :</strong>"
+msgstr "<strong>: النوعية</strong>"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__message_needaction
+msgid "Action Needed"
+msgstr "الإجراءات اللازمة"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__activity_ids
+msgid "Activities"
+msgstr "النشاطات"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أَيْقُونة نوع النشاط"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception__act_payment
+msgid "Actual payment"
+msgstr "الدفع الفعلي"
+
+#. module: fishing
+#: model:ir.model.fields.selection,name:fishing.selection__production_day_report_wizard__target__all
+#: model:ir.model.fields.selection,name:fishing.selection__production_month_report_wizard__target__all
+#: model:ir.model.fields.selection,name:fishing.selection__production_year_report_wizard__target__all
+msgid "All"
+msgstr "الكل"
+
+#. module: fishing
+#: model:ir.model.fields.selection,name:fishing.selection__production_month_report_wizard__month__4
+msgid "Apr"
+msgstr "ابريل"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: fishing
+#: model:ir.model.fields.selection,name:fishing.selection__production_month_report_wizard__month__8
+msgid "Aug"
+msgstr "اغسطس"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.fishing_tunnel_config_form
+msgid "Available Capacity"
+msgstr "السعة المتوفرة"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_tunnel__free_capacity
+msgid "Available capacity"
+msgstr "السعة المتوفرة"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_stock_pallet__barcode
+#: model:ir.model.fields,field_description:fishing.field_stock_quant_package__barcode
+#: model_terms:ir.ui.view,arch_db:fishing.report_pallet_barcode
+msgid "Barcode"
+msgstr "باركود"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception__bateau
+msgid "Boat"
+msgstr "قارب"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_letter__body
+msgid "Body"
+msgstr "المحتوى"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_stock_pallet__pack_ids
+msgid "Bulk Content"
+msgstr "الكمية بالجملة"
+
+#. module: fishing
+#: model:product.product,name:fishing.product_product_poly
+#: model:product.template,name:fishing.product_product_poly_product_template
+msgid "Caisse polystyrene"
+msgstr "كيس البوليسترين"
+
+#. module: fishing
+#: code:addons/fishing/wizard/get_quantity.py:0
+#: code:addons/fishing/wizard/get_quantity.py:0
+#: code:addons/fishing/wizard/get_quantity.py:0
+#, python-format
+msgid "Can not enter quantity more than existing quantity!"
+msgstr "لا يمكن إدخال كمية أكبر من الكمية الموجودة!"
+
+#. module: fishing
+#: code:addons/fishing/wizard/get_quantity.py:0
+#, python-format
+msgid ""
+"Can not enter quantity more than existing quantity! available quantity is :"
+"  you entered : "
+msgstr ""
+"لا يمكن إدخال كمية أكبر من الكمية الموجودة! الكمية المتوفرة هي:"
+" انت ادخلت : "
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.reception_get_qty_form_view
+msgid "Cancel products"
+msgstr "إلغاء المنتجات"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_tunnel__capacity
+msgid "Capacity"
+msgstr "السعة"
+
+#. module: fishing
+#: model:product.product,name:fishing.product_product_carton
+#: model:product.template,name:fishing.product_product_carton_product_template
+msgid "Carton"
+msgstr "كرتون"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fish_service_stock__category_id
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__article
+#: model:ir.model.fields,field_description:fishing.field_reception_fish_detail__article1
+msgid "Category"
+msgstr "الصنف"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.day_report_form
+#: model_terms:ir.ui.view,arch_db:fishing.fishing_validate_treatment_form_view
+#: model_terms:ir.ui.view,arch_db:fishing.letter_report_form
+#: model_terms:ir.ui.view,arch_db:fishing.month_report_form
+#: model_terms:ir.ui.view,arch_db:fishing.new_qty_form_view
+#: model_terms:ir.ui.view,arch_db:fishing.new_tunnel_qty_form_view
+#: model_terms:ir.ui.view,arch_db:fishing.reception_pause_form_view
+#: model_terms:ir.ui.view,arch_db:fishing.stock_exit_form_view
+#: model_terms:ir.ui.view,arch_db:fishing.year_report_form
+msgid "Close"
+msgstr "اغلاق"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_quality__code
+#: model:ir.model.fields,field_description:fishing.field_fishing_tunnel__code
+#: model_terms:ir.ui.view,arch_db:fishing.fishing_tunnel_config_form
+msgid "Code"
+msgstr "رمز"
+
+#. module: fishing
+#: model:ir.ui.menu,name:fishing.fishing_config_root_menu
+msgid "Configuration"
+msgstr "الإعدادات"
+
+#. module: fishing
+#: model_terms:ir.actions.act_window,help:fishing.action_pallets_view
+msgid "Create a new pallet"
+msgstr "انشاء حزمة جديد"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fish_service_stock__create_uid
+#: model:ir.model.fields,field_description:fishing.field_fishing_letter__create_uid
+#: model:ir.model.fields,field_description:fishing.field_fishing_operation_stop__create_uid
+#: model:ir.model.fields,field_description:fishing.field_fishing_operation_stop_wizard__create_uid
+#: model:ir.model.fields,field_description:fishing.field_fishing_quality__create_uid
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception__create_uid
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__create_uid
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_getqty__create_uid
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_validateqty__create_uid
+#: model:ir.model.fields,field_description:fishing.field_fishing_service_stock_wizard__create_uid
+#: model:ir.model.fields,field_description:fishing.field_fishing_session_product__create_uid
+#: model:ir.model.fields,field_description:fishing.field_fishing_time__create_uid
+#: model:ir.model.fields,field_description:fishing.field_fishing_tunnel__create_uid
+#: model:ir.model.fields,field_description:fishing.field_letter_report_wizard__create_uid
+#: model:ir.model.fields,field_description:fishing.field_production_day_report_wizard__create_uid
+#: model:ir.model.fields,field_description:fishing.field_production_month_report_wizard__create_uid
+#: model:ir.model.fields,field_description:fishing.field_production_year_report_wizard__create_uid
+#: model:ir.model.fields,field_description:fishing.field_reception_fish_detail__create_uid
+#: model:ir.model.fields,field_description:fishing.field_stock_pallet__create_uid
+msgid "Created by"
+msgstr "انشأ من قبل"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fish_service_stock__create_date
+#: model:ir.model.fields,field_description:fishing.field_fishing_letter__create_date
+#: model:ir.model.fields,field_description:fishing.field_fishing_operation_stop__create_date
+#: model:ir.model.fields,field_description:fishing.field_fishing_operation_stop_wizard__create_date
+#: model:ir.model.fields,field_description:fishing.field_fishing_quality__create_date
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception__create_date
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__create_date
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_getqty__create_date
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_validateqty__create_date
+#: model:ir.model.fields,field_description:fishing.field_fishing_service_stock_wizard__create_date
+#: model:ir.model.fields,field_description:fishing.field_fishing_session_product__create_date
+#: model:ir.model.fields,field_description:fishing.field_fishing_time__create_date
+#: model:ir.model.fields,field_description:fishing.field_fishing_tunnel__create_date
+#: model:ir.model.fields,field_description:fishing.field_letter_report_wizard__create_date
+#: model:ir.model.fields,field_description:fishing.field_production_day_report_wizard__create_date
+#: model:ir.model.fields,field_description:fishing.field_production_month_report_wizard__create_date
+#: model:ir.model.fields,field_description:fishing.field_production_year_report_wizard__create_date
+#: model:ir.model.fields,field_description:fishing.field_reception_fish_detail__create_date
+#: model:ir.model.fields,field_description:fishing.field_stock_pallet__create_date
+msgid "Created on"
+msgstr "أنشأ بتاريخ"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fish_service_stock__customer_id
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception__customer_id
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__customer_id
+msgid "Customer"
+msgstr "زبون"
+
+#. module: fishing
+#. openerp-web
+#: code:addons/fishing/static/src/xml/template.xml:0
+#: model:ir.ui.menu,name:fishing.menu_fishing_dashboard
+#, python-format
+msgid "Dashboard"
+msgstr "لوحة التحكم"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception__date
+#: model:ir.model.fields,field_description:fishing.field_letter_report_wizard__date
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.fishing_letter_report
+#: model_terms:ir.ui.view,arch_db:fishing.reception_report_template
+#: model_terms:ir.ui.view,arch_db:fishing.service_exit_report_template
+msgid "Date :"
+msgstr "التاريخ :"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_production_day_report_wizard__day
+msgid "Day"
+msgstr "اليوم"
+
+#. module: fishing
+#: model:ir.actions.act_window,name:fishing.day_report_window
+#: model:ir.actions.report,name:fishing.day_report
+#: model:ir.ui.menu,name:fishing.production_day_report_menu
+msgid "Day report"
+msgstr "التقرير اليومي"
+
+#. module: fishing
+#: model:ir.model.fields.selection,name:fishing.selection__production_month_report_wizard__month__12
+msgid "Dec"
+msgstr "دجمبر"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.reception_pause_form_view
+msgid "Describe the reason of this stop"
+msgstr "صف سبب هذا التوقف"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_quality__description
+msgid "Description"
+msgstr "الوصف"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception__reception_ids
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception__reception_ids1
+#: model_terms:ir.ui.view,arch_db:fishing.overview_form_view
+#: model_terms:ir.ui.view,arch_db:fishing.reception_form_view
+msgid "Details"
+msgstr "التفاصيل"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_letter__dir
+msgid "Direction"
+msgstr "الوجهة"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fish_service_stock__display_name
+#: model:ir.model.fields,field_description:fishing.field_fishing_letter__display_name
+#: model:ir.model.fields,field_description:fishing.field_fishing_operation_stop__display_name
+#: model:ir.model.fields,field_description:fishing.field_fishing_operation_stop_wizard__display_name
+#: model:ir.model.fields,field_description:fishing.field_fishing_quality__display_name
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception__display_name
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__display_name
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_getqty__display_name
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_validateqty__display_name
+#: model:ir.model.fields,field_description:fishing.field_fishing_service_stock_wizard__display_name
+#: model:ir.model.fields,field_description:fishing.field_fishing_session_product__display_name
+#: model:ir.model.fields,field_description:fishing.field_fishing_time__display_name
+#: model:ir.model.fields,field_description:fishing.field_fishing_tunnel__display_name
+#: model:ir.model.fields,field_description:fishing.field_letter_report_wizard__display_name
+#: model:ir.model.fields,field_description:fishing.field_production_day_report_wizard__display_name
+#: model:ir.model.fields,field_description:fishing.field_production_month_report_wizard__display_name
+#: model:ir.model.fields,field_description:fishing.field_production_year_report_wizard__display_name
+#: model:ir.model.fields,field_description:fishing.field_reception_fish_detail__display_name
+#: model:ir.model.fields,field_description:fishing.field_stock_pallet__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_service_stock_wizard__total_duration
+msgid "Duration"
+msgstr "المدة"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_operation_stop__end
+#: model:ir.model.fields,field_description:fishing.field_fishing_operation_stop_wizard__end
+#: model:ir.model.fields,field_description:fishing.field_fishing_service_stock_wizard__end
+#: model_terms:ir.ui.view,arch_db:fishing.fishing_production_day_report
+msgid "End"
+msgstr "انهاء"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fish_service_stock__is_out
+#: model_terms:ir.ui.view,arch_db:fishing.fishing_service_stock_tree
+msgid "Exit"
+msgstr "خروج"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fish_service_stock__exit_date
+msgid "Exit date"
+msgstr "تاريخ الخروج"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__exit_temp
+msgid "Exit temperature"
+msgstr "درجة حرارة الخروج"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fish_service_stock__expected_exit_date
+msgid "Expected exit date"
+msgstr "تاريخ الخروج المتوقع"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception__exp_payment
+msgid "Expected payment"
+msgstr "السداد المتوقع"
+
+#. module: fishing
+#: model:ir.model.fields.selection,name:fishing.selection__production_month_report_wizard__month__2
+msgid "Feb"
+msgstr "فبراير"
+
+#. module: fishing
+#: model:product.product,name:fishing.product_product_films
+#: model:product.template,name:fishing.product_product_films_product_template
+msgid "Films d'emballage"
+msgstr "اسلاك التغليف"
+
+#. module: fishing
+#: model:product.product,name:fishing.product_product_2
+#: model:product.template,name:fishing.product_product_2_product_template
+#: model_terms:ir.ui.view,arch_db:fishing.overview_kanban_view
+msgid "Fish"
+msgstr "سمك"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.tunnel_search_view
+#: model_terms:ir.ui.view,arch_db:fishing.view_fish_detail_search
+msgid "Fish Details"
+msgstr "تفاصيل الأسماك"
+
+#. module: fishing
+#: model:product.product,name:fishing.product_service_packaging
+#: model:product.template,name:fishing.product_service_packaging_product_template
+msgid "Fish Packaging"
+msgstr "تغليف الاسماك"
+
+#. module: fishing
+#: model:product.product,name:fishing.product_service_stock
+#: model:product.template,name:fishing.product_service_stock_product_template
+msgid "Fish Stock"
+msgstr "مخازن السمك"
+
+#. module: fishing
+#: model:product.product,name:fishing.product_service_treatment
+#: model:product.template,name:fishing.product_service_treatment_product_template
+msgid "Fish Treatment"
+msgstr "معالجة الأسماك"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.view_fish_treatment_detail_search
+msgid "Fish Treatment Details"
+msgstr "تفاصيل معالجة الأسماك"
+
+#. module: fishing
+#: model:product.product,name:fishing.product_service_tunnel
+#: model:product.template,name:fishing.product_service_tunnel_product_template
+msgid "Fish Tunnel"
+msgstr "ثلاجة السمك"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception__mareyeur
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__mareyeur
+msgid "Fish seller"
+msgstr "بائع سمك"
+
+#. module: fishing
+#: model:res.groups,name:fishing.fishing_admin
+msgid "Fishing Admin"
+msgstr "إدارة الصيد"
+
+#. module: fishing
+#: model:ir.actions.client,name:fishing.action_account_fish_report_all
+msgid "Fishing Report"
+msgstr "تقرير الصيد"
+
+#. module: fishing
+#: model:res.groups,name:fishing.fishing_user
+msgid "Fishing User"
+msgstr "مستخدم الصيد"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__message_follower_ids
+msgid "Followers"
+msgstr "متابعون"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: fishing
+#: model:ir.model.fields,help:fishing.field_fishing_reception_detail__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_letter__formula
+msgid "Formula"
+msgstr "معادلة"
+
+#. module: fishing
+#. openerp-web
+#: code:addons/fishing/static/src/xml/template.xml:0
+#, python-format
+msgid "Free"
+msgstr "متاح"
+
+#. module: fishing
+#. openerp-web
+#: code:addons/fishing/static/src/xml/template.xml:0
+#: model:ir.model.fields.selection,name:fishing.selection__fishing_operation_stop__operation__tunnel
+#: model:ir.model.fields.selection,name:fishing.selection__fishing_operation_stop_wizard__operation__tunnel
+#: model:ir.model.fields.selection,name:fishing.selection__fishing_time__operation__tunnel
+#, python-format
+msgid "Freezing"
+msgstr "تجميد"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__tunnel_responsible_id
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_getqty__tunnel_responsible_id
+msgid "Freezing Responsible"
+msgstr "مسؤول التجميد"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__tunnel_team_id
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_getqty__tunnel_team_id
+msgid "Freezing Team"
+msgstr "فريق التجميد"
+
+#. module: fishing
+#: model_terms:ir.actions.act_window,help:fishing.overview_window
+msgid "Fresh Fish Processing system"
+msgstr "نظام معالجة الأسماك الطازجة"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__will_be_tunneled
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_validateqty__will_be_tunneled
+msgid "Frozen"
+msgstr "مجمد"
+
+#. module: fishing
+#: model:ir.actions.act_window,name:fishing.overview_window
+msgid "General Overview"
+msgstr "نظرة عامة"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__has_message
+msgid "Has Message"
+msgstr "رسالة"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fish_service_stock__id
+#: model:ir.model.fields,field_description:fishing.field_fishing_letter__id
+#: model:ir.model.fields,field_description:fishing.field_fishing_operation_stop__id
+#: model:ir.model.fields,field_description:fishing.field_fishing_operation_stop_wizard__id
+#: model:ir.model.fields,field_description:fishing.field_fishing_quality__id
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception__id
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__id
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_getqty__id
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_validateqty__id
+#: model:ir.model.fields,field_description:fishing.field_fishing_service_stock_wizard__id
+#: model:ir.model.fields,field_description:fishing.field_fishing_session_product__id
+#: model:ir.model.fields,field_description:fishing.field_fishing_time__id
+#: model:ir.model.fields,field_description:fishing.field_fishing_tunnel__id
+#: model:ir.model.fields,field_description:fishing.field_letter_report_wizard__id
+#: model:ir.model.fields,field_description:fishing.field_production_day_report_wizard__id
+#: model:ir.model.fields,field_description:fishing.field_production_month_report_wizard__id
+#: model:ir.model.fields,field_description:fishing.field_production_year_report_wizard__id
+#: model:ir.model.fields,field_description:fishing.field_reception_fish_detail__id
+#: model:ir.model.fields,field_description:fishing.field_stock_pallet__id
+msgid "ID"
+msgstr ""
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__activity_exception_icon
+msgid "Icon"
+msgstr "أيقونة"
+
+#. module: fishing
+#: model:ir.model.fields,help:fishing.field_fishing_reception_detail__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "ايقونة للإشارة إلى نشاط استثناء."
+
+#. module: fishing
+#: model:ir.model.fields,help:fishing.field_fishing_reception_detail__message_needaction
+#: model:ir.model.fields,help:fishing.field_fishing_reception_detail__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديدها ، فإن الرسائل الجديدة تتطلب انتباهك."
+
+#. module: fishing
+#: model:ir.model.fields,help:fishing.field_fishing_reception_detail__message_has_error
+#: model:ir.model.fields,help:fishing.field_fishing_reception_detail__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده ، فإن بعض الرسائل بها خطأ في التسليم."
+
+#. module: fishing
+#: code:addons/fishing/wizard/get_quantity.py:0
+#: code:addons/fishing/wizard/get_quantity.py:0
+#, python-format
+msgid ""
+"Insufficient packaging boxes in stock\n"
+"Stock of  is : "
+msgstr ""
+"علب تغليف غير كافية في المخزن \n"
+"المخزن هو:"
+
+#. module: fishing
+#: code:addons/fishing/wizard/get_quantity.py:0
+#, python-format
+msgid ""
+"Insufficient treatment films in stock\n"
+"Stock of  is : "
+msgstr ""
+"اسلاك معالجة غير كافية في المخزن \ n"
+"المخزن هو:"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_getqty__internal_packaging
+msgid "Internal packaging"
+msgstr "التغليف الداخلي"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_service_stock_wizard__will_invoice
+msgid "Invoice"
+msgstr "فوترة"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__is_new
+msgid "Is New"
+msgstr "جديد"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__is_paused
+msgid "Is Paused"
+msgstr "موقف"
+
+#. module: fishing
+#: model:ir.model.fields.selection,name:fishing.selection__production_month_report_wizard__month__1
+msgid "Jan"
+msgstr "يناير"
+
+#. module: fishing
+#: model:ir.model,name:fishing.model_account_move
+msgid "Journal Entry"
+msgstr "قيد اليومية"
+
+#. module: fishing
+#: model:ir.model,name:fishing.model_account_move_line
+msgid "Journal Item"
+msgstr "عنصر اليومية"
+
+#. module: fishing
+#: model:ir.model.fields.selection,name:fishing.selection__production_month_report_wizard__month__7
+msgid "Jul"
+msgstr "يوليو"
+
+#. module: fishing
+#: model:ir.model.fields.selection,name:fishing.selection__production_month_report_wizard__month__6
+msgid "Jun"
+msgstr "يونيو"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fish_service_stock____last_update
+#: model:ir.model.fields,field_description:fishing.field_fishing_letter____last_update
+#: model:ir.model.fields,field_description:fishing.field_fishing_operation_stop____last_update
+#: model:ir.model.fields,field_description:fishing.field_fishing_operation_stop_wizard____last_update
+#: model:ir.model.fields,field_description:fishing.field_fishing_quality____last_update
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception____last_update
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail____last_update
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_getqty____last_update
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_validateqty____last_update
+#: model:ir.model.fields,field_description:fishing.field_fishing_service_stock_wizard____last_update
+#: model:ir.model.fields,field_description:fishing.field_fishing_session_product____last_update
+#: model:ir.model.fields,field_description:fishing.field_fishing_time____last_update
+#: model:ir.model.fields,field_description:fishing.field_fishing_tunnel____last_update
+#: model:ir.model.fields,field_description:fishing.field_letter_report_wizard____last_update
+#: model:ir.model.fields,field_description:fishing.field_production_day_report_wizard____last_update
+#: model:ir.model.fields,field_description:fishing.field_production_month_report_wizard____last_update
+#: model:ir.model.fields,field_description:fishing.field_production_year_report_wizard____last_update
+#: model:ir.model.fields,field_description:fishing.field_reception_fish_detail____last_update
+#: model:ir.model.fields,field_description:fishing.field_stock_pallet____last_update
+msgid "Last Modified on"
+msgstr "تاريخ آخر تعديل"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fish_service_stock__write_uid
+#: model:ir.model.fields,field_description:fishing.field_fishing_letter__write_uid
+#: model:ir.model.fields,field_description:fishing.field_fishing_operation_stop__write_uid
+#: model:ir.model.fields,field_description:fishing.field_fishing_operation_stop_wizard__write_uid
+#: model:ir.model.fields,field_description:fishing.field_fishing_quality__write_uid
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception__write_uid
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__write_uid
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_getqty__write_uid
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_validateqty__write_uid
+#: model:ir.model.fields,field_description:fishing.field_fishing_service_stock_wizard__write_uid
+#: model:ir.model.fields,field_description:fishing.field_fishing_session_product__write_uid
+#: model:ir.model.fields,field_description:fishing.field_fishing_time__write_uid
+#: model:ir.model.fields,field_description:fishing.field_fishing_tunnel__write_uid
+#: model:ir.model.fields,field_description:fishing.field_letter_report_wizard__write_uid
+#: model:ir.model.fields,field_description:fishing.field_production_day_report_wizard__write_uid
+#: model:ir.model.fields,field_description:fishing.field_production_month_report_wizard__write_uid
+#: model:ir.model.fields,field_description:fishing.field_production_year_report_wizard__write_uid
+#: model:ir.model.fields,field_description:fishing.field_reception_fish_detail__write_uid
+#: model:ir.model.fields,field_description:fishing.field_stock_pallet__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fish_service_stock__write_date
+#: model:ir.model.fields,field_description:fishing.field_fishing_letter__write_date
+#: model:ir.model.fields,field_description:fishing.field_fishing_operation_stop__write_date
+#: model:ir.model.fields,field_description:fishing.field_fishing_operation_stop_wizard__write_date
+#: model:ir.model.fields,field_description:fishing.field_fishing_quality__write_date
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception__write_date
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__write_date
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_getqty__write_date
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_validateqty__write_date
+#: model:ir.model.fields,field_description:fishing.field_fishing_service_stock_wizard__write_date
+#: model:ir.model.fields,field_description:fishing.field_fishing_session_product__write_date
+#: model:ir.model.fields,field_description:fishing.field_fishing_time__write_date
+#: model:ir.model.fields,field_description:fishing.field_fishing_tunnel__write_date
+#: model:ir.model.fields,field_description:fishing.field_letter_report_wizard__write_date
+#: model:ir.model.fields,field_description:fishing.field_production_day_report_wizard__write_date
+#: model:ir.model.fields,field_description:fishing.field_production_month_report_wizard__write_date
+#: model:ir.model.fields,field_description:fishing.field_production_year_report_wizard__write_date
+#: model:ir.model.fields,field_description:fishing.field_reception_fish_detail__write_date
+#: model:ir.model.fields,field_description:fishing.field_stock_pallet__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_letter_report_wizard__letter_id
+msgid "Letter"
+msgstr "رسالة"
+
+#. module: fishing
+#: model:ir.actions.act_window,name:fishing.letter_report_window
+msgid "Letter report"
+msgstr "تقرير إلكتروني"
+
+#. module: fishing
+#: model:ir.actions.report,name:fishing.letter_report
+msgid "Letter-"
+msgstr "رسالة-"
+
+#. module: fishing
+#: model:ir.actions.act_window,name:fishing.config_letters_act
+#: model:ir.ui.menu,name:fishing.customs_report_menu
+#: model:ir.ui.menu,name:fishing.fishing_config_letters
+msgid "Letters"
+msgstr "رسائل"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fish_service_stock__location_id
+#: model:ir.model.fields,field_description:fishing.field_stock_pallet__location_id
+msgid "Location"
+msgstr "موقع"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.reception_report_template
+msgid "Logo"
+msgstr "شعار"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_account_move_line__lot_id
+msgid "Lot"
+msgstr ""
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفق الرئيسي"
+
+#. module: fishing
+#: model:ir.model.fields.selection,name:fishing.selection__production_month_report_wizard__month__3
+msgid "Mar"
+msgstr "مارس"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_tunnel__max_temp
+msgid "Max temperature"
+msgstr "أقصى درجة حرارة"
+
+#. module: fishing
+#: model:ir.model.fields.selection,name:fishing.selection__production_month_report_wizard__month__5
+msgid "May"
+msgstr "مايو"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.reception_form_view
+#: model_terms:ir.ui.view,arch_db:fishing.reception_get_qty_form_view
+msgid "Menu"
+msgstr "قائمة"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__message_ids
+msgid "Messages"
+msgstr "رسائل"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_tunnel__min_temp
+msgid "Min temperature"
+msgstr "أدنى درجة حرارة"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_production_month_report_wizard__month
+msgid "Month"
+msgstr "شهر"
+
+#. module: fishing
+#: model:ir.actions.act_window,name:fishing.month_report_window
+#: model:ir.ui.menu,name:fishing.production_month_report_menu
+msgid "Month report"
+msgstr "التقرير الشهري"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطي"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_letter__name
+#: model:ir.model.fields,field_description:fishing.field_fishing_quality__name
+#: model:ir.model.fields,field_description:fishing.field_fishing_tunnel__name
+msgid "Name"
+msgstr "إسم"
+
+#. module: fishing
+#: code:addons/fishing/models/fish_service_stock.py:0
+#: code:addons/fishing/models/fish_service_stock.py:0
+#: code:addons/fishing/models/fish_service_stock.py:0
+#: code:addons/fishing/models/fish_service_stock.py:0
+#: code:addons/fishing/models/reception.py:0
+#: code:addons/fishing/models/reception.py:0
+#: code:addons/fishing/models/reception.py:0
+#: code:addons/fishing/models/reception.py:0
+#: code:addons/fishing/models/reception_details.py:0
+#: code:addons/fishing/models/reception_details.py:0
+#: code:addons/fishing/models/reception_details.py:0
+#: code:addons/fishing/models/reception_details.py:0
+#, python-format
+msgid "New"
+msgstr "جديد"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_getqty__new_status
+msgid "New Status"
+msgstr "حالة جديدة"
+
+#. module: fishing
+#: code:addons/fishing/models/reception_details.py:0
+#, python-format
+msgid "New freezing operation"
+msgstr "عملية تجميد جديدة"
+
+#. module: fishing
+#: model_terms:ir.actions.act_window,help:fishing.traitement_window
+msgid "New received quantities will be shown here"
+msgstr "سيتم عرض الكميات الجديدة المستلمة هنا"
+
+#. module: fishing
+#: code:addons/fishing/models/reception_details.py:0
+#, python-format
+msgid "New treatment"
+msgstr "معالجة جديدة"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: fishing
+#: model_terms:ir.actions.act_window,help:fishing.tunnel_window_packaging
+msgid "No quantities to pack for now"
+msgstr "لا توجد كميات للتغليف في الوقت الحالي"
+
+#. module: fishing
+#: model_terms:ir.actions.act_window,help:fishing.traitement_window
+msgid "No quantities to treat for now"
+msgstr "لا توجد كميات للمعالجة في الوقت الحالي"
+
+#. module: fishing
+#: model_terms:ir.actions.act_window,help:fishing.tunnel_window
+msgid "No records to put in tunnels for now"
+msgstr "لا توجد سجلات لوضعها في الأنفاق في الوقت الحالي"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.view_fish_detail_search
+msgid "Not Packed"
+msgstr "غير مغلف"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.view_fish_treatment_detail_search
+msgid "Not Treated"
+msgstr "غير معالج"
+
+#. module: fishing
+#: model:ir.model.fields.selection,name:fishing.selection__production_month_report_wizard__month__11
+msgid "Nov"
+msgstr "نوفمبر"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: fishing
+#: model:ir.model.fields,help:fishing.field_fishing_reception_detail__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "عدد الرسائل التي تتطلب اتخاذ إجراء"
+
+#. module: fishing
+#: model:ir.model.fields,help:fishing.field_fishing_reception_detail__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: fishing
+#: model:ir.model.fields,help:fishing.field_fishing_reception_detail__message_unread_counter
+msgid "Number of unread messages"
+msgstr "عدد الرسائل غير المقروءة"
+
+#. module: fishing
+#: model:ir.model.fields.selection,name:fishing.selection__production_month_report_wizard__month__10
+msgid "Oct"
+msgstr "أكتوبر"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.fishing_production_day_report
+msgid "Opening time :"
+msgstr " وقت الدوام :"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_operation_stop__operation
+#: model:ir.model.fields,field_description:fishing.field_fishing_operation_stop_wizard__operation
+#: model:ir.model.fields,field_description:fishing.field_fishing_time__operation
+#: model_terms:ir.ui.view,arch_db:fishing.fishing_production_day_report
+msgid "Operation"
+msgstr "عملية"
+
+#. module: fishing
+#: model:ir.actions.act_window,name:fishing.config_time_act
+msgid "Operation time"
+msgstr "وقت العملية"
+
+#. module: fishing
+#: model:ir.ui.menu,name:fishing.fishing_operations
+#: model:ir.ui.menu,name:fishing.operation_reports_menu
+msgid "Operations"
+msgstr "العمليات"
+
+#. module: fishing
+#: model:ir.ui.menu,name:fishing.menu_overview
+msgid "Operations overview"
+msgstr "نظرة عامة على العمليات"
+
+#. module: fishing
+#: model:ir.ui.menu,name:fishing.menu_dashboard
+msgid "Overview"
+msgstr "ملخص"
+
+#. module: fishing
+#: model:ir.model,name:fishing.model_stock_quant_package
+#: model:ir.ui.menu,name:fishing.fishing_production_stock_packages
+#: model_terms:ir.ui.view,arch_db:fishing.report_pallet_barcode
+msgid "Packages"
+msgstr "الحزم"
+
+#. module: fishing
+#. openerp-web
+#: code:addons/fishing/static/src/xml/template.xml:0
+#: model:ir.actions.act_window,name:fishing.tunnel_window_packaging
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception__packaging_ordered
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__packaging_ordered
+#: model:ir.model.fields,field_description:fishing.field_reception_fish_detail__packaging_ordered1
+#: model:ir.model.fields.selection,name:fishing.selection__fishing_operation_stop__operation__packaging
+#: model:ir.model.fields.selection,name:fishing.selection__fishing_operation_stop_wizard__operation__packaging
+#: model:ir.model.fields.selection,name:fishing.selection__fishing_time__operation__packaging
+#: model:ir.ui.menu,name:fishing.menu_sc_packaging
+#: model_terms:ir.ui.view,arch_db:fishing.overview_form_view
+#: model_terms:ir.ui.view,arch_db:fishing.reception_report_template
+#, python-format
+msgid "Packaging"
+msgstr "تغليف"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__paking_responsible_id
+msgid "Packaging Responsible"
+msgstr "مسؤول التغليف"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__paking_scum_qty
+msgid "Packaging Scum"
+msgstr "بقايا التغليف"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__paking_team_id
+msgid "Packaging Team"
+msgstr "فريق التغليف"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__paking_end_date
+msgid "Packaging end date"
+msgstr "تاريخ انتهاء التغليف"
+
+#. module: fishing
+#: model:ir.model.fields.selection,name:fishing.selection__fishing_reception__status__5
+#: model:ir.model.fields.selection,name:fishing.selection__fishing_reception_detail__status__5
+#: model:ir.model.fields.selection,name:fishing.selection__reception_fish_detail__status1__5
+msgid "Packaging in progress"
+msgstr "قيد التغليف"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__paking_start_date
+msgid "Packaging start date"
+msgstr "تاريخ بدء التغليف"
+
+#. module: fishing
+#: model:ir.model.fields.selection,name:fishing.selection__fishing_reception__status__6
+#: model:ir.model.fields.selection,name:fishing.selection__fishing_reception_detail__status__6
+#: model:ir.model.fields.selection,name:fishing.selection__reception_fish_detail__status1__6
+msgid "Packed"
+msgstr "مغلف"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.fishing_production_day_report
+msgid "Packed Qnty"
+msgstr "الكمية المغلفة"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_stock_quant_package__pallet_id
+msgid "Pallet"
+msgstr "حزمة"
+
+#. module: fishing
+#: model:ir.actions.report,name:fishing.action_report_pallet_barcode
+msgid "Pallet Barcode with Content"
+msgstr "باركود الحزمة مع المحتوى"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_stock_pallet__name
+msgid "Pallet Reference"
+msgstr "مرجع الحزمة"
+
+#. module: fishing
+#: model:ir.actions.act_window,name:fishing.action_pallets_view
+#: model:ir.ui.menu,name:fishing.fishing_production_stock_pallets
+#: model:ir.ui.menu,name:fishing.menu_pallet
+msgid "Pallets"
+msgstr "الحزم"
+
+#. module: fishing
+#: model_terms:ir.actions.act_window,help:fishing.action_pallets_view
+msgid ""
+"Pallets are usually created via transfers (during pack operation) and can contain different\n"
+"                    products.\n"
+"                    Once created, the whole pallet can be moved at once, or products can be unpacked and moved as\n"
+"                    single units again."
+msgstr ""
+"يتم إنشاء المنصات عادةً عبر عمليات النقل (أثناء عملية الحزمة) ويمكن أن تحتوي على \n مختلفة"
+"المنتجات. \n"
+"بمجرد الإنشاء ، يمكن نقل البليت بالكامل مرة واحدة ، أو يمكن تفريغ المنتجات ونقلها على أنها \n"
+"وحدات مفردة مرة أخرى"
+
+#. module: fishing
+#: model:ir.model,name:fishing.model_stock_pallet
+msgid "Pallets containing packs and/or other packages"
+msgstr "الحزم التي تحتوي على أكياس و / أو أكياس أخرى"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.traitement_tree_view
+#: model_terms:ir.ui.view,arch_db:fishing.tunnel_tree_view
+msgid "Pause operation"
+msgstr "وقف العملية"
+
+#. module: fishing
+#. openerp-web
+#: code:addons/fishing/static/src/xml/template.xml:0
+#, python-format
+msgid "Performance rate"
+msgstr "معدل الأداء"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.fishing_production_day_report
+msgid "Performance rate :"
+msgstr "معدل الأداء :"
+
+#. module: fishing
+#: model:ir.ui.menu,name:fishing.periodic_reports_menu
+msgid "Periodic reports"
+msgstr "التقارير الدورية"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.fishing_service_stock_tree
+msgid "Prepare Exit"
+msgstr "تجهيز الخروج"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.day_report_form
+#: model_terms:ir.ui.view,arch_db:fishing.letter_report_form
+#: model_terms:ir.ui.view,arch_db:fishing.month_report_form
+#: model_terms:ir.ui.view,arch_db:fishing.year_report_form
+msgid "Print"
+msgstr "طباعة"
+
+#. module: fishing
+#: model:ir.ui.menu,name:fishing.printing_menu
+msgid "Printing"
+msgstr "طباعة"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__process_qty
+msgid "Processed Quantity"
+msgstr "الكمية المعالجة"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fish_service_stock__product_id
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_getqty__product_id
+#: model:ir.model.fields,field_description:fishing.field_fishing_session_product__product_id
+#: model:ir.model.fields,field_description:fishing.field_stock_quant_package__product_id
+#: model_terms:ir.ui.view,arch_db:fishing.fishing_production_day_report
+msgid "Product"
+msgstr "منتج"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_getqty__default_categ_id
+msgid "Product Category"
+msgstr "فئة المنتج"
+
+#. module: fishing
+#: code:addons/fishing/models/reception_details.py:0
+#: code:addons/fishing/wizard/get_quantity.py:0
+#, python-format
+msgid "Product creation"
+msgstr "إنشاء منتج"
+
+#. module: fishing
+#. openerp-web
+#: code:addons/fishing/static/src/xml/template.xml:0
+#: code:addons/fishing/static/src/xml/template.xml:0
+#: code:addons/fishing/static/src/xml/template.xml:0
+#: code:addons/fishing/static/src/xml/template.xml:0
+#: code:addons/fishing/static/src/xml/template.xml:0
+#: model:ir.model.fields.selection,name:fishing.selection__fishing_reception__type__production
+#: model:ir.model.fields.selection,name:fishing.selection__fishing_reception_detail__type__production
+#: model:ir.model.fields.selection,name:fishing.selection__production_day_report_wizard__target__production
+#: model:ir.model.fields.selection,name:fishing.selection__production_month_report_wizard__target__production
+#: model:ir.model.fields.selection,name:fishing.selection__production_year_report_wizard__target__production
+#: model:ir.model.fields.selection,name:fishing.selection__reception_fish_detail__type1__production
+#: model:ir.ui.menu,name:fishing.fishing_production_stock
+#: model_terms:ir.ui.view,arch_db:fishing.reception_form_view
+#, python-format
+msgid "Production"
+msgstr "الإنتاج"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.fishing_production_day_report
+msgid "Production report"
+msgstr "تقرير الإنتاج"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.fishing_production_day_report
+msgid "Production time :"
+msgstr "وقت الإنتاج :"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_getqty__product_ids
+#: model:ir.ui.menu,name:fishing.fishing_production_stock_products
+#: model_terms:ir.ui.view,arch_db:fishing.reception_get_qty_form_view
+msgid "Products"
+msgstr "منتجات"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception__qr_code
+msgid "QR Code"
+msgstr "QR كود"
+
+#. module: fishing
+#. openerp-web
+#: code:addons/fishing/static/src/xml/template.xml:0
+#: code:addons/fishing/static/src/xml/template.xml:0
+#: code:addons/fishing/static/src/xml/template.xml:0
+#: code:addons/fishing/static/src/xml/template.xml:0
+#: code:addons/fishing/static/src/xml/template.xml:0
+#, python-format
+msgid "Qnty"
+msgstr "الكمية"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_session_product__qte
+msgid "Qte"
+msgstr "Qnty"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__quality
+#: model:ir.model.fields,field_description:fishing.field_reception_fish_detail__quality1
+#: model:ir.ui.menu,name:fishing.fishing_config_quality
+msgid "Quality"
+msgstr "الجودة"
+
+#. module: fishing
+#: model:ir.actions.act_window,name:fishing.config_quality_act
+msgid "Quality categories"
+msgstr "أصناف الجودة"
+
+#. module: fishing
+#. openerp-web
+#: code:addons/fishing/static/src/xml/template.xml:0
+#, python-format
+msgid "Quality indicator"
+msgstr "مؤشر الجودة"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.fishing_production_day_report
+msgid "Quality rate :"
+msgstr "معدل الجودة :"
+
+#. module: fishing
+#: model:ir.actions.act_window,name:fishing.tunnel_window
+msgid "Quantities to put in tunnel"
+msgstr "الكميات التي يجب وضعها في الثلاجة"
+
+#. module: fishing
+#: model:ir.actions.act_window,name:fishing.traitement_window
+msgid "Quantities to treat"
+msgstr "الكميات المراد علاجها"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fish_service_stock__qte
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__qte
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_getqty__quantity
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_getqty__remaining_quantity
+#: model:ir.model.fields,field_description:fishing.field_reception_fish_detail__qte1
+#: model:ir.model.fields,field_description:fishing.field_stock_pallet__quantity
+#: model:ir.model.fields,field_description:fishing.field_stock_quant_package__quantity
+#: model:product.attribute,name:fishing.product_attribute_quantity
+#: model_terms:ir.ui.view,arch_db:fishing.day_report_form
+#: model_terms:ir.ui.view,arch_db:fishing.fishing_validate_treatment_form_view
+#: model_terms:ir.ui.view,arch_db:fishing.letter_report_form
+#: model_terms:ir.ui.view,arch_db:fishing.month_report_form
+#: model_terms:ir.ui.view,arch_db:fishing.new_qty_form_view
+#: model_terms:ir.ui.view,arch_db:fishing.new_tunnel_qty_form_view
+#: model_terms:ir.ui.view,arch_db:fishing.reception_get_qty_form_view
+#: model_terms:ir.ui.view,arch_db:fishing.reception_pause_form_view
+#: model_terms:ir.ui.view,arch_db:fishing.report_pallet_barcode
+#: model_terms:ir.ui.view,arch_db:fishing.stock_exit_form_view
+#: model_terms:ir.ui.view,arch_db:fishing.year_report_form
+msgid "Quantity"
+msgstr "الكمية"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_time__quantity
+msgid "Quantity (Kg)"
+msgstr "الكمية (كغ)"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.overview_kanban_view
+msgid "Quantity :"
+msgstr "الكمية :"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_operation_stop__raison
+#: model:ir.model.fields,field_description:fishing.field_fishing_operation_stop_wizard__raison
+msgid "Raison"
+msgstr "السبب"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.reception_get_qty_form_view
+msgid "Read"
+msgstr "إقرء"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fish_service_stock__is_ready_out
+#: model_terms:ir.ui.view,arch_db:fishing.tunnel_search_view
+msgid "Ready"
+msgstr "جاهز"
+
+#. module: fishing
+#: model_terms:ir.actions.act_window,help:fishing.overview_window
+msgid "Ready to go"
+msgstr "جاهز للذهاب"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.fishing_production_day_report
+msgid "Reason"
+msgstr "السبب"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fish_service_stock__receive_date
+msgid "Receive date"
+msgstr "تاريخ الإستلام"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.overview_kanban_view
+msgid "Received :"
+msgstr "تم الاستلام :"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.fishing_production_day_report
+msgid "Received Qnty"
+msgstr "الكمية المستلمة"
+
+#. module: fishing
+#. openerp-web
+#: code:addons/fishing/static/src/xml/template.xml:0
+#: model:ir.model.fields,field_description:fishing.field_account_bank_statement_line__reception_id
+#: model:ir.model.fields,field_description:fishing.field_account_move__reception_id
+#: model:ir.model.fields,field_description:fishing.field_account_payment__reception_id
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__reception_id
+#: model:ir.model.fields,field_description:fishing.field_reception_fish_detail__reception_id1
+#: model:ir.ui.menu,name:fishing.menu_sc_reception
+#: model_terms:ir.ui.view,arch_db:fishing.overview_tree_view
+#: model_terms:ir.ui.view,arch_db:fishing.reception_report_template
+#: model_terms:ir.ui.view,arch_db:fishing.traitement_form_view
+#: model_terms:ir.ui.view,arch_db:fishing.traitement_tree_view
+#: model_terms:ir.ui.view,arch_db:fishing.traitement_tree_view_fpr_packing
+#: model_terms:ir.ui.view,arch_db:fishing.tunnel_tree_view
+#, python-format
+msgid "Reception"
+msgstr "الإستقبال"
+
+#. module: fishing
+#: model:ir.actions.report,name:fishing.reception_report
+msgid "Reception sheet"
+msgstr "ورقة الإستقبال"
+
+#. module: fishing
+#: model:ir.actions.act_window,name:fishing.medab_reception_window
+#: model_terms:ir.ui.view,arch_db:fishing.reception_form_view
+#: model_terms:ir.ui.view,arch_db:fishing.reception_tree_view
+msgid "Receptions"
+msgstr "الإستلامات"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fish_service_stock__ref
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception__ref
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__ref
+#: model_terms:ir.ui.view,arch_db:fishing.fishing_service_stock_form
+#: model_terms:ir.ui.view,arch_db:fishing.overview_form_view
+#: model_terms:ir.ui.view,arch_db:fishing.reception_form_view
+msgid "Reference"
+msgstr "المرجع"
+
+#. module: fishing
+#: model:ir.ui.menu,name:fishing.menu_reporting
+msgid "Reporting"
+msgstr "التقارير"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_time__time
+msgid "Required time (min)"
+msgstr "الوقت المطلوب (دقيقة)"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception__responsible_id
+msgid "Responsible"
+msgstr "المسؤول"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.traitement_tree_view
+#: model_terms:ir.ui.view,arch_db:fishing.tunnel_tree_view
+msgid "Resume operation"
+msgstr "استئناف العملية"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل القصيرة"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.reception_get_qty_form_view
+msgid "Save products"
+msgstr "حفظ المنتجات"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.reception_get_qty_form_view
+msgid "Save to package"
+msgstr "حفظ في حزمة"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__scum_qty
+#: model:ir.model.fields,field_description:fishing.field_reception_fish_detail__scum_qty1
+msgid "Scum Quantity"
+msgstr "كمية البقايا"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.fishing_production_day_report
+msgid "Scums"
+msgstr "البقايا"
+
+#. module: fishing
+#: code:addons/fishing/wizard/get_quantity.py:0
+#: code:addons/fishing/wizard/get_quantity.py:0
+#: code:addons/fishing/wizard/get_quantity.py:0
+#, python-format
+msgid "Selected Tunnel doesn't have enough capacity for this quantity"
+msgstr "الثلاجة المحددة ليست لديها سعة كافية لهذه الكمية"
+
+#. module: fishing
+#: model:ir.model.fields.selection,name:fishing.selection__production_month_report_wizard__month__9
+msgid "Sep"
+msgstr "سبتمبر"
+
+#. module: fishing
+#. openerp-web
+#: code:addons/fishing/static/src/xml/template.xml:0
+#: code:addons/fishing/static/src/xml/template.xml:0
+#: code:addons/fishing/static/src/xml/template.xml:0
+#: code:addons/fishing/static/src/xml/template.xml:0
+#: code:addons/fishing/static/src/xml/template.xml:0
+#: model:ir.model.fields.selection,name:fishing.selection__fishing_reception__type__service
+#: model:ir.model.fields.selection,name:fishing.selection__fishing_reception_detail__type__service
+#: model:ir.model.fields.selection,name:fishing.selection__production_day_report_wizard__target__service
+#: model:ir.model.fields.selection,name:fishing.selection__production_month_report_wizard__target__service
+#: model:ir.model.fields.selection,name:fishing.selection__production_year_report_wizard__target__service
+#: model:ir.model.fields.selection,name:fishing.selection__reception_fish_detail__type1__service
+#: model:ir.ui.menu,name:fishing.fishing_service_stock
+#: model_terms:ir.ui.view,arch_db:fishing.reception_form_view
+#, python-format
+msgid "Service"
+msgstr "خدمة"
+
+#. module: fishing
+#: model:ir.ui.menu,name:fishing.menu_service_overview
+msgid "Service overview"
+msgstr "نظرة عامة على الخدمة"
+
+#. module: fishing
+#: model:ir.actions.act_window,name:fishing.fishing_service_stock_window
+#: model:ir.ui.menu,name:fishing.fishing_service_stocks
+msgid "Service stocks"
+msgstr "مخزون الخدمة"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_session_product__session_id
+msgid "Session"
+msgstr "جلسة"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.fishing_letter_report
+msgid "Signature"
+msgstr "التوقيع"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_operation_stop__start
+#: model:ir.model.fields,field_description:fishing.field_fishing_operation_stop_wizard__start
+#: model:ir.model.fields,field_description:fishing.field_fishing_service_stock_wizard__start
+#: model_terms:ir.ui.view,arch_db:fishing.fishing_production_day_report
+msgid "Start"
+msgstr "بدء"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.traitement_tree_view
+msgid "Start Packaging"
+msgstr "بدء التغليف"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.traitement_tree_view_fpr_packing
+msgid "Start packaging"
+msgstr "بدء التغليف"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.traitement_tree_view
+msgid "Start treatment"
+msgstr "بدء المعالجة"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.traitement_tree_view
+#: model_terms:ir.ui.view,arch_db:fishing.tunnel_tree_view
+msgid "Start tunnels"
+msgstr "بدء التثليج"
+
+#. module: fishing
+#. openerp-web
+#: code:addons/fishing/static/src/xml/template.xml:0
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception__status
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__status
+#, python-format
+msgid "Status"
+msgstr "الحالة"
+
+#. module: fishing
+#: model:ir.model.fields,help:fishing.field_fishing_reception_detail__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة على أساس الأنشطة \n"
+"متأخر: تاريخ الاستحقاق قد فات  \n"
+"اليوم: تاريخ النشاط هو اليوم \n"
+"مخطط لها: الأنشطة المستقبلية"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_reception_fish_detail__status1
+msgid "Status1"
+msgstr "حالة"
+
+#. module: fishing
+#. openerp-web
+#: code:addons/fishing/static/src/xml/template.xml:0
+#: model:ir.model.fields,field_description:fishing.field_fish_service_stock__stock_id
+#: model:ir.ui.menu,name:fishing.fishing_stock_root_menu
+#: model_terms:ir.ui.view,arch_db:fishing.service_exit_report_template
+#, python-format
+msgid "Stock"
+msgstr "المخزن"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.fishing_service_stock_form
+msgid "Stock entry"
+msgstr "مدخلات المخزن"
+
+#. module: fishing
+#: code:addons/fishing/models/fish_service_stock.py:0
+#, python-format
+msgid "Stock exit"
+msgstr "خروج المخزن"
+
+#. module: fishing
+#: model:ir.actions.report,name:fishing.service_exit_report
+msgid "Stock sheet"
+msgstr "ورقة المخزن"
+
+#. module: fishing
+#: model:ir.actions.act_window,name:fishing.stops_report_window
+#: model:ir.ui.menu,name:fishing.stops_report_menu
+#: model_terms:ir.ui.view,arch_db:fishing.fishing_production_day_report
+msgid "Stops"
+msgstr "التوقفات"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.fishing_validate_treatment_form_view
+#: model_terms:ir.ui.view,arch_db:fishing.new_qty_form_view
+#: model_terms:ir.ui.view,arch_db:fishing.new_tunnel_qty_form_view
+#: model_terms:ir.ui.view,arch_db:fishing.reception_get_qty_form_view
+#: model_terms:ir.ui.view,arch_db:fishing.reception_pause_form_view
+#: model_terms:ir.ui.view,arch_db:fishing.stock_exit_form_view
+msgid "Submit"
+msgstr "إرسال"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.reception_get_qty_form_view
+msgid "Submit and print"
+msgstr "إرسال وطباعة"
+
+#. module: fishing
+#. openerp-web
+#: code:addons/fishing/static/src/xml/template.xml:0
+#, python-format
+msgid "T-R"
+msgstr ""
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_production_day_report_wizard__target
+#: model:ir.model.fields,field_description:fishing.field_production_month_report_wizard__target
+#: model:ir.model.fields,field_description:fishing.field_production_year_report_wizard__target
+msgid "Target"
+msgstr "الهدف"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception__team_id
+msgid "Team"
+msgstr "الفريق"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception__ordered_temp
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__ordered_temp
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_getqty__ordered_temp
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_validateqty__ordered_temp
+#: model:ir.model.fields,field_description:fishing.field_reception_fish_detail__ordered_temp1
+msgid "Temperature"
+msgstr "درجة الحرارة"
+
+#. module: fishing
+#: model:ir.ui.menu,name:fishing.fishing_config_time
+msgid "Time"
+msgstr "الوقت"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_letter__title
+msgid "Title"
+msgstr "العنوان"
+
+#. module: fishing
+#. openerp-web
+#: code:addons/fishing/static/src/xml/template.xml:0
+#: code:addons/fishing/static/src/xml/template.xml:0
+#: code:addons/fishing/static/src/xml/template.xml:0
+#: code:addons/fishing/static/src/xml/template.xml:0
+#, python-format
+msgid "Total"
+msgstr "المجموع"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.fishing_tunnel_config_form
+msgid "Total Capacity"
+msgstr "السعة الكلية"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.fishing_production_day_report
+msgid "Totals"
+msgstr "المجموع"
+
+#. module: fishing
+#: model:ir.model.fields.selection,name:fishing.selection__fishing_reception__status__2
+#: model:ir.model.fields.selection,name:fishing.selection__fishing_reception_detail__status__2
+#: model:ir.model.fields.selection,name:fishing.selection__reception_fish_detail__status1__2
+msgid "Treated"
+msgstr "معالَج"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_validateqty__treated_qty
+msgid "Treated Quantity"
+msgstr "الكمية المعالجة"
+
+#. module: fishing
+#: model_terms:ir.actions.act_window,help:fishing.tunnel_window_packaging
+msgid "Treated and/or tunneled quantities will be shown here"
+msgstr "ستظهر هنا الكميات المعالجة أو المثلجة"
+
+#. module: fishing
+#: model_terms:ir.actions.act_window,help:fishing.tunnel_window
+msgid "Treated quantities will be shown here"
+msgstr "سيتم عرض الكميات المعالجة هنا"
+
+#. module: fishing
+#. openerp-web
+#: code:addons/fishing/static/src/xml/template.xml:0
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception__treatment_ordered
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__treatment_ordered
+#: model:ir.model.fields,field_description:fishing.field_reception_fish_detail__treatment_ordered1
+#: model:ir.model.fields.selection,name:fishing.selection__fishing_operation_stop__operation__treatment
+#: model:ir.model.fields.selection,name:fishing.selection__fishing_operation_stop_wizard__operation__treatment
+#: model:ir.model.fields.selection,name:fishing.selection__fishing_time__operation__treatment
+#: model:ir.ui.menu,name:fishing.menu_sc_traitement
+#: model_terms:ir.ui.view,arch_db:fishing.overview_form_view
+#: model_terms:ir.ui.view,arch_db:fishing.reception_report_template
+#, python-format
+msgid "Treatment"
+msgstr "المعالجة"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__treatment_responsible_id
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_getqty__treatment_responsible_id
+msgid "Treatment Responsible"
+msgstr "مسؤول المعالجة"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__treatment_scum_qty
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_validateqty__treatment_scum_qty
+msgid "Treatment Scum"
+msgstr "بقايا المعالجة"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__treatment_team_id
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_getqty__treatment_team_id
+msgid "Treatment Team"
+msgstr "فريق المعالجة"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__end_date
+msgid "Treatment end date"
+msgstr "تاريخ انتهاء المعالجة"
+
+#. module: fishing
+#: model:ir.model.fields.selection,name:fishing.selection__fishing_reception__status__1
+#: model:ir.model.fields.selection,name:fishing.selection__fishing_reception_detail__status__1
+#: model:ir.model.fields.selection,name:fishing.selection__reception_fish_detail__status1__1
+msgid "Treatment in progress"
+msgstr "قيد المعالجة"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__startdate
+msgid "Treatment start date"
+msgstr "تاريخ بدء المعالجة"
+
+#. module: fishing
+#: code:addons/fishing/models/reception_details.py:0
+#, python-format
+msgid "Treatment validation"
+msgstr "التحقق من صحة المعالجة"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception__tunnel_ordered
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__tunnel_id
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_getqty__tunnel_id
+#: model:ir.model.fields,field_description:fishing.field_reception_fish_detail__tunnel_ordered1
+#: model:ir.ui.menu,name:fishing.menu_sc_tunnels
+#: model_terms:ir.ui.view,arch_db:fishing.fishing_tunnel_config_form
+#: model_terms:ir.ui.view,arch_db:fishing.overview_form_view
+#: model_terms:ir.ui.view,arch_db:fishing.pallet_form
+#: model_terms:ir.ui.view,arch_db:fishing.reception_report_template
+msgid "Tunnel"
+msgstr "الثلاجة"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_getqty__tunnel_capacity
+msgid "Tunnel Capacity"
+msgstr "سعة الثلاجة"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__tunnel_scum_qty
+msgid "Tunnel Scum"
+msgstr "بقايا التثليج"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__tunnel_end_date
+msgid "Tunnel end date"
+msgstr "تاريخ انتهاء التثليج"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__tunnel_start_date
+msgid "Tunnel start date"
+msgstr "تاريخ بدء التثليج"
+
+#. module: fishing
+#: model:ir.model.fields.selection,name:fishing.selection__fishing_reception__status__4
+#: model:ir.model.fields.selection,name:fishing.selection__fishing_reception_detail__status__4
+#: model:ir.model.fields.selection,name:fishing.selection__reception_fish_detail__status1__4
+msgid "Tunneled"
+msgstr "مثلج"
+
+#. module: fishing
+#: model:ir.actions.act_window,name:fishing.config_tunnels_act
+#: model:ir.ui.menu,name:fishing.fishing_config_tunnels
+msgid "Tunnels"
+msgstr "الثلاجات"
+
+#. module: fishing
+#: model:ir.model.fields.selection,name:fishing.selection__fishing_reception__status__3
+#: model:ir.model.fields.selection,name:fishing.selection__fishing_reception_detail__status__3
+#: model:ir.model.fields.selection,name:fishing.selection__reception_fish_detail__status1__3
+msgid "Tunnels in progress"
+msgstr "في الثلاجة"
+
+#. module: fishing
+#. openerp-web
+#: code:addons/fishing/static/src/xml/template.xml:0
+#: code:addons/fishing/static/src/xml/template.xml:0
+#: code:addons/fishing/static/src/xml/template.xml:0
+#: code:addons/fishing/static/src/xml/template.xml:0
+#: code:addons/fishing/static/src/xml/template.xml:0
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception__type
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__type
+#: model:ir.model.fields,field_description:fishing.field_reception_fish_detail__type1
+#: model_terms:ir.ui.view,arch_db:fishing.fishing_production_day_report
+#, python-format
+msgid "Type"
+msgstr "نوع"
+
+#. module: fishing
+#: model:ir.model.fields,help:fishing.field_fishing_reception_detail__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع نشاط الاستثناء المسجل."
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_service_stock_wizard__unit_price
+msgid "Unit price"
+msgstr "سعر الوحدة"
+
+#. module: fishing
+#: model:product.product,uom_name:fishing.product_product_2
+#: model:product.product,uom_name:fishing.product_product_carton
+#: model:product.product,uom_name:fishing.product_product_films
+#: model:product.product,uom_name:fishing.product_product_poly
+#: model:product.product,uom_name:fishing.product_service_packaging
+#: model:product.product,uom_name:fishing.product_service_stock
+#: model:product.product,uom_name:fishing.product_service_treatment
+#: model:product.product,uom_name:fishing.product_service_tunnel
+#: model:product.template,uom_name:fishing.product_product_2_product_template
+#: model:product.template,uom_name:fishing.product_product_carton_product_template
+#: model:product.template,uom_name:fishing.product_product_films_product_template
+#: model:product.template,uom_name:fishing.product_product_poly_product_template
+#: model:product.template,uom_name:fishing.product_service_packaging_product_template
+#: model:product.template,uom_name:fishing.product_service_stock_product_template
+#: model:product.template,uom_name:fishing.product_service_treatment_product_template
+#: model:product.template,uom_name:fishing.product_service_tunnel_product_template
+msgid "Units"
+msgstr "وحدات"
+
+#. module: fishing
+#: code:addons/fishing/models/stock_pallet.py:0
+#, python-format
+msgid "Unknown Pallet"
+msgstr "حزمة غير معروفة"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.pallet_form
+msgid "Unpack"
+msgstr "فك"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__message_unread
+msgid "Unread Messages"
+msgstr " الرسائل غير المقروءة"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "عداد الرسائل غير المقروءة"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__used_boxes
+#: model_terms:ir.ui.view,arch_db:fishing.fishing_production_day_report
+msgid "Used boxes"
+msgstr "الأكياس المستخدمة"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__treatment_films_qty
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_validateqty__treatment_films_qty
+#: model_terms:ir.ui.view,arch_db:fishing.fishing_production_day_report
+msgid "Used films"
+msgstr "الأسلاك المستخدمة"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.traitement_tree_view
+msgid "Validate  treatment"
+msgstr "التحقق من صحة المعالجة"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.traitement_tree_view
+#: model_terms:ir.ui.view,arch_db:fishing.tunnel_tree_view
+msgid "Validate tunnels"
+msgstr "إنهاء التثليج"
+
+#. module: fishing
+#: model:ir.model.fields.selection,name:fishing.selection__fishing_reception__status__0
+#: model:ir.model.fields.selection,name:fishing.selection__fishing_reception_detail__status__0
+#: model:ir.model.fields.selection,name:fishing.selection__reception_fish_detail__status1__0
+msgid "Waiting for treatment"
+msgstr "في انتظار المعالجة"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_fishing_reception_detail__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: fishing
+#: model:ir.model.fields,help:fishing.field_fishing_reception_detail__website_message_ids
+msgid "Website communication history"
+msgstr "سجل اتصال الموقع"
+
+#. module: fishing
+#: model:ir.model.fields,field_description:fishing.field_production_month_report_wizard__year
+#: model:ir.model.fields,field_description:fishing.field_production_year_report_wizard__year
+msgid "Year"
+msgstr "السنة"
+
+#. module: fishing
+#: model:ir.actions.act_window,name:fishing.year_report_window
+#: model:ir.ui.menu,name:fishing.production_year_report_menu
+msgid "Year report"
+msgstr "التقرير السنوي"
+
+#. module: fishing
+#: model:ir.model.fields,help:fishing.field_fishing_quality__description
+msgid "description of the organoleptic criteria"
+msgstr "وصف المعايير الحسية"
+
+#. module: fishing
+#: model:ir.model,name:fishing.model_fish_service_stock
+msgid "fish.service.stock"
+msgstr ""
+
+#. module: fishing
+#: model:ir.model,name:fishing.model_fishing_letter
+msgid "fishing.letter"
+msgstr ""
+
+#. module: fishing
+#: model:ir.model,name:fishing.model_fishing_operation_stop
+msgid "fishing.operation.stop"
+msgstr ""
+
+#. module: fishing
+#: model:ir.model,name:fishing.model_fishing_operation_stop_wizard
+msgid "fishing.operation.stop.wizard"
+msgstr ""
+
+#. module: fishing
+#: model:ir.model,name:fishing.model_fishing_quality
+msgid "fishing.quality"
+msgstr ""
+
+#. module: fishing
+#: model:ir.model,name:fishing.model_fishing_reception
+msgid "fishing.reception"
+msgstr ""
+
+#. module: fishing
+#: model:ir.model,name:fishing.model_fishing_reception_detail
+msgid "fishing.reception.detail"
+msgstr ""
+
+#. module: fishing
+#: model:ir.model,name:fishing.model_fishing_reception_getqty
+msgid "fishing.reception.getqty"
+msgstr ""
+
+#. module: fishing
+#: model:ir.model,name:fishing.model_fishing_reception_validateqty
+msgid "fishing.reception.validateqty"
+msgstr ""
+
+#. module: fishing
+#: model:ir.model,name:fishing.model_fishing_service_stock_wizard
+msgid "fishing.service.stock.wizard"
+msgstr ""
+
+#. module: fishing
+#: model:ir.model,name:fishing.model_fishing_session_product
+msgid "fishing.session.product"
+msgstr ""
+
+#. module: fishing
+#: model:ir.model,name:fishing.model_fishing_time
+msgid "fishing.time"
+msgstr ""
+
+#. module: fishing
+#: model:ir.model,name:fishing.model_fishing_tunnel
+msgid "fishing.tunnel"
+msgstr ""
+
+#. module: fishing
+#: model:ir.model,name:fishing.model_letter_report_wizard
+msgid "letter.report.wizard"
+msgstr ""
+
+#. module: fishing
+#: model:ir.model,name:fishing.model_production_day_report_wizard
+msgid "production.day.report.wizard"
+msgstr ""
+
+#. module: fishing
+#: model:ir.model,name:fishing.model_production_month_report_wizard
+msgid "production.month.report.wizard"
+msgstr ""
+
+#. module: fishing
+#: model:ir.model,name:fishing.model_production_year_report_wizard
+msgid "production.year.report.wizard"
+msgstr ""
+
+#. module: fishing
+#: model:ir.model,name:fishing.model_reception_fish_detail
+msgid "reception.fish.detail"
+msgstr "استقبال"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.service_exit_report_template
+msgid "sheet"
+msgstr "ورقة"
+
+#. module: fishing
+#: model_terms:ir.ui.view,arch_db:fishing.stock_exit_form_view
+msgid "would you invoice this stock"
+msgstr "هل تود فوترة هذا المخزون"

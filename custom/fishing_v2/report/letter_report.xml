@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="fishing_letter_report">
+
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <table style="width:100%">
+                        <tr>
+                            <td style="width:50%">
+                            </td>
+                            <td style="width:50%">
+                                <div>
+                                    <div>Date :
+                                        <t t-esc="date"/>
+                                    </div>
+                                    <h5 class="text-center">
+                                        <t t-esc="letter['dir']"/>
+                                    </h5>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div>
+                    <strong>Object :</strong>
+                    <t t-esc="letter['title']"/>
+                </div>
+                <br/>
+                <br/>
+                <div>
+                    <t t-esc="letter['body']"/>
+                </div>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <div class="text-center">
+                    <t t-esc="letter['formula']"/>
+                </div>
+                <br/>
+                <br/>
+                <div class="text-right">
+                    Signature
+                </div>
+            </t>
+        </t>
+
+    </template>
+</odoo>

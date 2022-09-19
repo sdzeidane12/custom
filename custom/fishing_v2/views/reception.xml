@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_open_reception_invoices" model="ir.actions.act_window">
+            <field name="name">Invoices</field>
+            <field name="res_model">account.move</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="view_id" ref="account.view_invoice_tree"/>
+            <field name="search_view_id" ref="account.view_account_invoice_filter"/>
+            <field name="domain">[('reception_id', '=', active_id)]</field>
+        </record>
+
+        <record id="view_reception_search" model="ir.ui.view">
+            <field name="name">fishing.reception.search</field>
+            <field name="model">fishing.reception</field>
+            <field name="arch" type="xml">
+                <search string="Fishing">
+                    <!--search by  -->
+                    <field name="ref"/>
+                    <field name="mareyeur"/>
+                    <field name="customer_id"/>
+                    <field name="type"/>
+                    <!--End search by  -->
+                    <separator/>
+
+                    <!-- begin Filter -->
+                    <filter string="Production" name="type_is_production" domain="[('type', '=', 'production')]"/>
+                    <filter string="Service" name="type_is_service" domain="[('type', '=', 'service')]"/>
+                    <!-- end Filter -->
+
+                    <!--begin Group By -->
+                    <filter string="Type" name="type" context="{'group_by': 'type'}"/>
+                    <filter string="Fish seller" name="type" context="{'group_by': 'mareyeur'}"/>
+                    <filter string="Customer" name="type" context="{'group_by': 'customer_id'}"/>
+                    <!--end Group By -->
+                </search>
+            </field>
+        </record>
+
+        <record id="reception_form_view" model="ir.ui.view">
+            <field name="name">fishing.reception.form</field>
+            <field name="model">fishing.reception</field>
+            <field name="arch" type="xml">
+                <form string="Receptions" edit="1">
+                    <header>
+                        <field name="canceled" invisible="1"/>
+                        <field name="cancelable" invisible="1"/>
+                        <button
+                                name="action_cancel"
+                                type="object"
+                                string="Cancel"
+                                attrs="{'invisible': ['|', ('cancelable', '=', False), ('canceled', '=', True)]}"
+                                class="oe_highlight"
+                        />
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button
+                                    name="%(action_open_reception_invoices)d"
+                                    type="action"
+                                    class="oe_stat_button"
+                                    icon="fa-credit-card"
+                            >
+                                Facture
+                            </button>
+                        </div>
+                        <div class="oe_title">
+                            <group>
+                                <group>
+                                    <h1>
+                                        <field name="ref" placeholder="Reference"/>
+                                    </h1>
+                                </group>
+                                <group>
+                                    <field name="qr_code" widget='image' class="oe_avatar" nolabel="1"/>
+                                </group>
+                            </group>
+                        </div>
+                        <field name="type" widget="radio"/>
+                        <notebook>
+                            <page string="Production" attrs="{'invisible':[('type','=', 'service')]}">
+                                <group>
+                                    <group>
+                                        <field name="mareyeur" attrs="{'required':[('type','=', 'production')]}"/>
+                                        <field name="bateau" domain="[('category_id', 'ilike', 'Boats')]"
+                                               options="{'no_create': '1'}"/>
+                                    </group>
+                                    <group>
+                                        <field name="date"/>
+                                        <field name="responsible_id"/>
+
+                                        <field name="team_id" options="{'no_create': '1'}"/>
+                                    </group>
+                                </group>
+                                <notebook>
+                                    <page string="Details">
+                                        <field name="reception_ids" required="1"
+                                               attrs="{'readonly':[('ref','not in', ['New', 'Nouveau', 'جديد'])]}">
+                                            <tree string="Menu" editable="bottom">
+                                                <field name="article1" domain="[('categ_id', 'ilike', 'Fish')]"
+                                                       options="{'no_create': '1'}"/>
+                                                <field name="qte1"/>
+                                                <field name="type1" invisible="1"/>
+                                                <field name="quality1" options="{'no_create': '1'}"
+                                                       domain="[('product_ids', 'ilike', 'article1')]"/>
+                                                <field name="scum_qty1"/>
+                                            </tree>
+                                        </field>
+                                    </page>
+                                </notebook>
+                            </page>
+                            <page string="Service" attrs="{'invisible':[('type','=', 'production')]}">
+                                <group>
+                                    <group>
+                                        <field name="customer_id" attrs="{'required':[('type','=', 'service')]}"/>
+                                        <field name="treatment_ordered"/>
+                                        <field name="tunnel_ordered"/>
+                                        <field name="ordered_temp"
+                                               attrs="{'invisible':[('tunnel_ordered','=', False)]}"/>
+                                        <field name="packaging_ordered"/>
+                                    </group>
+                                    <group>
+                                        <field name="date"/>
+                                        <field name="responsible_id"/>
+                                        <field name="team_id"/>
+                                    </group>
+                                </group>
+                                <notebook>
+                                    <page string="Details">
+                                        <field name="reception_ids"
+                                               attrs="{'readonly':[('ref','not in', ['New', 'Nouveau', 'جديد'])]}">
+                                            <tree string="Menu" editable="bottom">
+                                                <field name="article1" domain="[('categ_id', 'ilike', 'Fish')]"/>
+                                                <field name="qte1"/>
+                                                <field name="type1" invisible="1"/>
+                                                <field name="quality1" options="{'no_create': '1'}" domain="[]"/>
+                                                <field name="scum_qty1"/>
+                                            </tree>
+                                        </field>
+                                    </page>
+                                </notebook>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="reception_tree_view" model="ir.ui.view">
+            <field name="name">fishing.reception.tree</field>
+            <field name="model">fishing.reception</field>
+            <field name="arch" type="xml">
+                <tree string="Receptions">
+                    <field name="ref"/>
+                    <field name="mareyeur"/>
+                    <field name="customer_id"/>
+                    <field name="date"/>
+                    <field name="type"/>
+                    <field name="status" optional="hide"/>
+                    <field name="exp_payment" groups="fishing_v2.fishing_admin"/>
+                    <field name="act_payment" groups="fishing_v2.fishing_admin"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="medab_reception_window" model="ir.actions.act_window">
+            <field name="name">Receptions</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fishing.reception</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Reception"
+                  id="menu_sc_reception"
+                  parent="fishing_operations"
+                  sequence="2"
+                  action="medab_reception_window"
+                  groups="fishing_admin,group_has_reception"
+        />
+    </data>
+</odoo>
