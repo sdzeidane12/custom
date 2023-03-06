@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="maintenance_equipment_form" model="ir.ui.view">
+            <field name="name">maintenance.equipment.view.form.inherit.fishing</field>
+            <field name="model">maintenance.equipment</field>
+            <field name="inherit_id" ref="maintenance.hr_equipment_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='category_id']" position="after">
+                    <field name="type"/>
+                    <field name="cost_center_id"/>
+                    <field name="volume"/>
+                </xpath>
+                <div name="button_box" position="inside">
+                    <button name="10" type="action" class="oe_stat_button" context="{'default_company_id': company_id}"
+                            icon="fa-money">
+                        <field name="total_income"></field>
+                    </button>
+                    <button name="11" type="action" class="oe_stat_button" context="{'default_company_id': company_id}"
+                            icon="fa-arrow-up">
+                        Expenses
+                    </button>
+                    <button name="12" type="action" class="oe_stat_button" context="{'default_company_id': company_id}"
+                            icon="fa-check-square-o">
+                        <field name="total_reception"></field>
+                    </button>
+                </div>
+            </field>
+        </record>
+    </data>
+</odoo>

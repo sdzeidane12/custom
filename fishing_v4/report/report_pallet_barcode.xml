@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+<template id="report_pallet_barcode">
+    <t t-call="web.basic_layout">
+        <t t-foreach="docs" t-as="o">
+            <t>
+                <div class="page">
+                    <div class="oe_structure"/>
+                    <table class="table table-condensed" style="border-bottom: 0px solid white !important;">
+                        <tr>
+                            <th>
+                              <h1 t-field="o.name" class="mt0 float-left"/>
+                            </th>
+                            <th name="td_pk_barcode" style="text-align: center">
+                                <div t-field="o.barcode" t-options="{'widget': 'barcode', 'width': 600, 'height': 100, 'img_style': 'width:300px;height:50px;'}"/>
+                                <p t-field="o.barcode"/>
+                            </th>
+                        </tr>
+                    </table>
+                    <table class="table table-sm" style="border-bottom: 0px solid white !important;">
+                        <thead>
+                            <tr>
+                                <th>Packages</th>
+                                <th name="th_quantity" class="text-right">Barcode</th>
+                                <th name="th_quantity" class="text-right">Quantity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="o.pack_ids" t-as="l">
+                                <td>
+                                   <span  t-field="l.name"/>
+                                </td>
+                                <td>
+                                   <span  t-field="l.barcode"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="l.quant_ids[0].quantity"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </t>
+</template>
+
+</data>
+</odoo>

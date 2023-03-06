@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Packaging form -->
+    <record id="reception_get_qty_form_view" model="ir.ui.view">
+        <field name="name">fishing.get.qty.form</field>
+        <field name="model">fishing.reception.getqty</field>
+        <field name="arch" type="xml">
+            <form string="Quantity">
+                <group>
+                    <h1 class="text-center">
+                        <field name="remaining_quantity" readonly="1"/>
+                        <span>
+                            Kg remaining
+                        </span>
+                    </h1>
+                </group>
+                <group>
+                    <group>
+                        <field name="default_categ_id" />
+                        <field name="internal_packaging"/>
+                    </group>
+                    <group>
+                        <group style="width: 80%">
+                            <field name="product_id" required="1"
+                                   domain="[('product_tmpl_id', '=', default_categ_id)]"
+                                   options="{'no_create': '1'}"/>
+                            <field name="quantity" required="1"/>
+                            <field name="location_id" required="1"/>
+                        </group>
+                        <group style="width: 18%">
+                            <button string="Read" class="oe_highlight"/>
+                        </group>
+                    </group>
+                </group>
+                <group>
+                    <button type="object" name="add_product" string="Submit" class="oe_highlight btn-block"/>
+                    <button type="object" name="add_product" string="Submit and print" class="oe_highlight btn-block"
+                            icon="fa-print"/>
+                </group>
+                <notebook>
+                    <page string="Products">
+                        <group>
+                            <field name="product_ids" nolabel="1">
+                                <tree string="Menu" editable="bottom">
+                                    <control>
+                                        <create name="add_product_control" string=""/>
+                                    </control>
+                                    <field name="product_id"/>
+                                    <field name="qte"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                </notebook>
+                <footer class="text-right">
+                    <button type="object" name="save_products" string="Save package" class="oe_highlight"/>
+                    <button type="object" name="save_products_to_packaging" string="Save to pallet"
+                            class="oe_highlight"/>
+                    <!--
+                    <button type="object" name="cancel_products" string="Cancel products" class="oe_highlight"/>
+
+                                        <button special="cancel" string="Cancel products" class="oe_highlight"/>
+                    -->
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- New treatment form -->
+    <record id="new_qty_form_view" model="ir.ui.view">
+        <field name="name">new.qty.form</field>
+        <field name="model">fishing.reception.getqty</field>
+        <field name="arch" type="xml">
+            <form string="Quantity">
+                <group>
+                    <group>
+                        <field name="quantity" required="1"/>
+                    </group>
+                    <group>
+                        <field name="treatment_responsible_id" required="0"/>
+                    </group>
+                </group>
+                <group>
+                    <field name="treatment_team_id" required="0"/>
+                </group>
+                <footer>
+                    <button type="object" name="start_treatment" string="Submit" class="oe_highlight"/>
+                    <button special="cancel" string="Close" class="oe_highlight"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- Validate treatment form -->
+    <record id="fishing_validate_treatment_form_view" model="ir.ui.view">
+        <field name="name">fishing.validate.qty.form</field>
+        <field name="model">fishing.reception.validateqty</field>
+        <field name="arch" type="xml">
+            <form string="Quantity">
+                <group>
+                    <field name="treated_qty"/>
+                    <field name="treatment_films_qty"/>
+                </group>
+                <group>
+                    <field name="treatment_scum_qty"/>
+                    <field name="will_be_tunneled" attrs="{'invisible': [('will_be_tunneled','=', False)]}"/>
+                    <field name="ordered_temp" attrs="{'invisible': [('will_be_tunneled','=', False)]}"/>
+                </group>
+                <footer>
+                    <button type="object" name="approve_treatment" string="Submit" class="oe_highlight"/>
+                    <button special="cancel" string="Close" class="oe_highlight"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- New tunnel form -->
+    <record id="new_tunnel_qty_form_view" model="ir.ui.view">
+        <field name="name">new.qty.form</field>
+        <field name="model">fishing.reception.getqty</field>
+        <field name="arch" type="xml">
+            <form string="Quantity">
+                <group>
+                    <field name="tunnel_id" required="1" options="{'no_create': True}"/>
+                </group>
+                <group>
+                    <group>
+                        <field name="quantity" required="1"/>
+                    </group>
+                    <group>
+                        <group>
+                            <span class="font-weight-bold">/</span>
+                            <span class="font-weight-bold text-danger">
+                                <field name="tunnel_capacity" readonly="1" nolabel="1"/>
+                            </span>
+                        </group>
+                        <group>
+                        </group>
+                    </group>
+                </group>
+                <group>
+                    <field name="ordered_temp"/>
+                    <field name="tunnel_responsible_id"/>
+                </group>
+                <footer>
+                    <button type="object" name="start_tunnel" string="Submit" class="oe_highlight"/>
+                    <button special="cancel" string="Close" class="oe_highlight"/>
+                </footer>
+            </form>
+
+        </field>
+    </record>
+
+</odoo>

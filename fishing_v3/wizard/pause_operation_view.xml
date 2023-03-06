@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Pause operation form -->
+    <record id="reception_pause_form_view" model="ir.ui.view">
+        <field name="name">operation.pause.form</field>
+        <field name="model">fishing.operation.stop.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Quantity">
+                <h3 class="text-center">Describe the reason of this stop</h3>
+                <field name="raison" required="1"/>
+
+                <footer>
+                    <button type="object" name="action_pause" string="Submit" class="oe_highlight"/>
+                    <button special="cancel" string="Close" class="oe_highlight"/>
+                </footer>
+            </form>
+
+        </field>
+    </record>
+
+</odoo>

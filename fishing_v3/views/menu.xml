@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--ROOT MENU-->
+        <menuitem name="Fishing V2"
+                  id="base.menu_sc_root"
+                  sequence="-99"
+                  web_icon="fishing_v2,static/description/icon.png"
+        />
+        <menuitem name="Operations"
+                  id="fishing_operations"
+                  parent="base.menu_sc_root"
+                  sequence="1"
+                  groups="fishing_admin,group_has_reception,group_has_treatment,group_has_tunnel,group_has_pcking"
+        />
+    </data>
+</odoo>

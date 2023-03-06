@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="bon_stockage_template">
+            <t t-call="web.basic_layout">
+
+                <t>
+                    <div class="page">
+                        <h1 class="text-center font-weight-bold">BON D'ENTREE STOCKAGE</h1>
+                        <div class="oe_structure"/>
+                        <t t-foreach="docs" t-as="o">
+                            <table class="table table-sm" style="border-bottom: 5px solid white !important;">
+                                <thead>
+                                    <tr class="text-center" style="background-color:#E0E0E0;">
+                                        <th style="border: 1px solid black;border-collapse: collapse;">Client</th>
+                                        <th style="border: 1px solid black;border-collapse: collapse;">Especes</th>
+                                        <th style="border: 1px solid black;border-collapse: collapse;">Nbr Cartons</th>
+                                        <th style="border: 1px solid black;border-collapse: collapse;">Poids</th>
+                                        <th style="border: 1px solid black;border-collapse: collapse;">Date d'entrée
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center">
+                                            <span t-field="o.customer_id"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <span t-field="o.product_id"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <span t-field="o.nbr_packages"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <span t-field="o.qte"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <span t-field="o.receive_date"/>
+                                        </td>
+
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </t>
+
+                        <div>
+                            <h1>Total:</h1>
+                            <t t-set="sum_qte" t-value="0"/>
+                            <t t-foreach="docs" t-as="line">
+                                <t t-set="sum_qte" t-value="sum_qte+line.qte"/>
+                            </t>
+                            <t t-esc="sum_qte"/>
+                        </div>
+                    </div>
+                </t>
+            </t>
+
+        </template>
+    </data>
+
+</odoo>

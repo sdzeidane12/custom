@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="fishing_tunell_report">
+            <t t-call="web.basic_layout">
+        <t t-foreach="docs" t-as="o">
+            <t>
+                <div class="page">
+                    <h1 class="text-center font-weight-bold">BON CONGELATION</h1>
+                    <div class="text-center">
+
+                    </div>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <h3 class="text-center font-weight-bold">PRODUCT INFORMATION</h3>
+                    <br/>
+                    <div class="oe_structure"/>
+                    <table class="table table-sm" style="border-bottom: 5px solid white !important;">
+                        <thead>
+                            <tr class="text-center" style="background-color:#E0E0E0;">
+                                <th  style="border: 1px solid black;border-collapse: collapse;">FISH SELLER</th>
+                                <th  style="border: 1px solid black;border-collapse: collapse;">PRODUCT</th>
+                                <th  style="border: 1px solid black;border-collapse: collapse;">TYPE</th>
+                                <th  style="border: 1px solid black;border-collapse: collapse;">RECEPTION</th>
+                                <th  style="border: 1px solid black;border-collapse: collapse;">Quantity</th>
+                                <th  style="border: 1px solid black;border-collapse: collapse;">SCUM QUANTITY</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="docs" t-as="doc">
+                                 <td class="text-center">
+                                   <span  t-field="doc.mareyeur"/>
+                                </td>
+                                <td class="text-center">
+                                   <span  t-field="doc.article"/>
+                                </td>
+                                 <td class="text-center">
+                                   <span  t-field="doc.type"/>
+                                </td>
+                                <td class="text-center">
+                                   <span  t-field="doc.reception_id"/>
+                                </td>
+                                <td class="text-center">
+                                    <span t-field="doc.qte"/>
+                                </td>
+                                 <td class="text-center" >
+                                   <span  t-field="doc.treatment_scum_qty"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3 class="text-center font-weight-bold">TREATMENT INFORMATION</h3>
+
+                    <table class="table table-sm" style="border-bottom: 3px solid white !important;">
+                        <thead>
+                            <tr class="text-center" style="background-color:#E0E0E0;">
+                                <th>TUNNEL REFERENCE</th>
+                                <th>TUNNEL</th>
+                                <th>TUNNEL START</th>
+                                <th>TUNNEL END</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="docs" t-as="doc">
+                                 <td class="text-center">
+                                   <span  t-field="doc.ref"/>
+                                </td>
+                                <td class="text-center">
+                                   <span  t-field="doc.tunnel_id"/>
+                                </td>
+                                <td class="text-center">
+                                   <span  t-field="doc.tunnel_start_date"/>
+                                </td>
+                                <td class="text-center">
+                                    <span t-field="doc.tunnel_end_date"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </t>
+        </template>
+    </data>
+
+</odoo>

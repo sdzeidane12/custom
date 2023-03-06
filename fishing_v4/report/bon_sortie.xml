@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="bon_sortie_template">
+            <t t-call="web.basic_layout">
+                <t t-foreach="docs" t-as="o">
+                    <t>
+                        <div class="page">
+                            <h1 class="text-center font-weight-bold">BON DE SORTIE</h1>
+                            <div class="text-center">
+
+                            </div>
+                            <br/>
+                            <h3 class="text-center font-weight-bold">PRODUCT INFORMATION</h3>
+                            <br/>
+                            <div class="oe_structure"/>
+                            <table class="table table-sm" style="border-bottom: 5px solid white !important;">
+                                <thead>
+                                    <tr class="text-center" style="background-color:#E0E0E0;">
+                                        <th style="border: 1px solid black;border-collapse: collapse;">FISH SELLER</th>
+                                        <th style="border: 1px solid black;border-collapse: collapse;">PRODUCT</th>
+                                        <th style="border: 1px solid black;border-collapse: collapse;">RECEPTION</th>
+                                        <th style="border: 1px solid black;border-collapse: collapse;">Quantity</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="docs" t-as="doc">
+                                        <td class="text-center">
+                                            <span t-field="doc.customer_id"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <span t-field="doc.product_id"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <span t-field="doc.reception_id"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <span t-field="doc.qte"/>
+                                        </td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h3 class="text-center font-weight-bold">TREATMENT INFORMATION</h3>
+
+                            <table class="table table-sm" style="border-bottom: 3px solid white !important;">
+                                <thead>
+                                    <tr class="text-center" style="background-color:#E0E0E0;">
+                                        <th>Stock</th>
+                                        <th>Location</th>
+                                        <th>Receive date</th>
+                                        <th>Exit date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="docs" t-as="doc">
+                                        <td class="text-center">
+                                            <span t-field="doc.stock_id"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <span t-field="doc.location_id"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <span t-field="doc.receive_date"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <span t-field="doc.exit_date"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="text-center h5 mt-3">PACKAGES AND PALLETS</div>
+                            <table style="width:100%; border: 1px solid black;border-collapse: collapse;">
+                                <tr class="text-center" style="background-color:#E0E0E0;">
+                                    <th style="border: 1px solid black;border-collapse: collapse;">PACKAGES</th>
+                                    <th style="border: 1px solid black;border-collapse: collapse;">PALLETS</th>
+                                </tr>
+                                <t t-foreach="o.box_ids" t-as="line">
+                                    <tr>
+                                        <td style="border: 1px solid black;border-collapse: collapse;">
+                                            <span t-field="line.ref"/>
+                                        </td>
+                                        <td style="border: 1px solid black;border-collapse: collapse;">
+                                            <span t-field="line.pallet_id"/>
+                                        </td>
+
+                                    </tr>
+                                </t>
+                            </table>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+
+</odoo>

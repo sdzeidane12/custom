@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- production report -->
+    <record id="day_report" model="ir.actions.report">
+        <field name="name">Day report</field>
+        <field name="model">production.day.report.wizard</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">fishing_v2.fishing_production_day_report</field>
+        <field name="report_file">fishing_v2.fishing_production_day_report</field>
+        <field name="binding_model_id" ref="model_production_day_report_wizard"/>
+        <field name="binding_type">report</field>
+    </record>
+    <!--    tunell & treatment report-->
+    <record id="tunell_report" model="ir.actions.report">
+        <field name="name">Tunell Report</field>
+        <field name="model">fishing.reception.detail</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">fishing_v2.fishing_tunell_report</field>
+        <field name="report_file">fishing_v2.fishing_tunell_report</field>
+        <field name="binding_model_id" ref="model_fishing_reception_detail"/>
+        <field name="binding_type">report</field>
+    </record>
+    <record id="treatment_report" model="ir.actions.report">
+        <field name="name">Tretment Report</field>
+        <field name="model">fishing.reception.detail</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">fishing_v2.fishing_treatment_report</field>
+        <field name="report_file">fishing_v2.fishing_treatment_report</field>
+        <field name="binding_model_id" ref="model_fishing_reception_detail"/>
+        <field name="binding_type">report</field>
+    </record>
+    <!-- Pallet report -->
+    <record id="action_report_pallet_barcode" model="ir.actions.report">
+        <field name="name">Pallet Barcode with Content</field>
+        <field name="model">stock.pallet</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">fishing_v2.report_pallet_barcode</field>
+        <field name="report_file">fishing_v2.report_pallet_barcode</field>
+        <field name="binding_model_id" ref="model_stock_pallet"/>
+        <field name="binding_type">report</field>
+    </record>
+    <!-- reception report -->
+    <record id="reception_report" model="ir.actions.report">
+        <field name="name">Reception sheet</field>
+        <field name="model">fishing.reception</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">fishing_v2.reception_report_template</field>
+        <field name="report_file">fishing_v2.reception_report_template</field>
+        <field name="binding_model_id" ref="model_fishing_reception"/>
+        <field name="binding_type">report</field>
+    </record>
+    <!-- service_exit_report report -->
+    <record id="service_exit_report" model="ir.actions.report">
+        <field name="name">Stock sheet</field>
+        <field name="model">fish.service.stock</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">fishing_v2.service_exit_report_template</field>
+        <field name="report_file">fishing_v2.service_exit_report_template</field>
+        <field name="binding_model_id" ref="model_fish_service_stock"/>
+        <field name="binding_type">report</field>
+    </record>
+    <record id="bon_sortie" model="ir.actions.report">
+        <field name="name">Bon de sortie</field>
+        <field name="model">fish.service.stock</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">fishing_v2.bon_sortie_template</field>
+        <field name="report_file">fishing_v2.bon_sortie_template</field>
+        <field name="binding_model_id" ref="model_fish_service_stock"/>
+        <field name="binding_type">report</field>
+    </record>
+    <record id="bon_stockage" model="ir.actions.report">
+        <field name="name">Bon d'entree stockage</field>
+        <field name="model">fish.service.stock</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">fishing_v2.bon_stockage_template</field>
+        <field name="report_file">fishing_v2.bon_stockage_template</field>
+        <field name="binding_model_id" ref="model_fish_service_stock"/>
+        <field name="binding_type">report</field>
+    </record>
+
+
+    <!-- Letter report -->
+    <record id="letter_report" model="ir.actions.report">
+        <field name="name">Letter-</field>
+        <field name="model">letter.report.wizard</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">fishing_v2.fishing_letter_report</field>
+        <field name="report_file">fishing_v2.fishing_letter_report</field>
+        <field name="binding_model_id" ref="model_letter_report_wizard"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <!--    Etat de stock repport-->
+    <record id="etat_de_stock" model="ir.actions.report">
+        <field name="name">Etat de stock</field>
+        <field name="model">sale.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">fishing_v2.etat_de_stock_template</field>
+        <field name="report_file">fishing_v2.etat_de_stock_template</field>
+        <field name="binding_model_id" ref="sale.model_sale_order"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <!--    Confirmation de vente -->
+    <record id="confirmation_vente" model="ir.actions.report">
+        <field name="name">Confirmation de vente</field>
+        <field name="model">sale.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">fishing_v2.confirmation_vente_template</field>
+        <field name="report_file">fishing_v2.confirmation_vente_template</field>
+        <field name="binding_model_id" ref="sale.model_sale_order"/>
+        <field name="binding_type">report</field>
+    </record>
+<!--Notfication -->
+
+    <record id="notfication_devises" model="ir.actions.report">
+        <field name="name">Notfication Devises</field>
+        <field name="model">sale.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">fishing_v2.notfication_devises_template</field>
+        <field name="report_file">fishing_v2.notfication_devises_template</field>
+        <field name="binding_model_id" ref="sale.model_sale_order"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

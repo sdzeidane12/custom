@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- fishing.tunnel form view -->
+        <record id="fishing_tunnel_config_form" model="ir.ui.view">
+            <field name="name">fishing.tunnel.form</field>
+            <field name="model">fishing.tunnel</field>
+            <field name="arch" type="xml">
+                <form string="Tunnel">
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button class="oe_stat_button btn-success" disabled="1">
+                                <field name="capacity" readonly="1"/>
+                                <div>Capacity</div>
+                            </button>
+                            <button class="oe_stat_button btn-success" disabled="1">
+                                <field name="free_capacity" readonly="1"/>
+                                <div>Free Capacity</div>
+                            </button>
+                        </div>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="code" placeholder="Code"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="capacity"/>
+                            </group>
+                            <group>
+                                <field name="min_temp"/>
+                                <field name="max_temp"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="type" widget="radio"/>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- fishing.tunnel tree view -->
+        <record id="fishing_tunnel_config_tree" model="ir.ui.view">
+            <field name="name">fishing.tunnel.tree</field>
+            <field name="model">fishing.tunnel</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="code"/>
+                    <field name="capacity"/>
+                    <field name="min_temp"/>
+                    <field name="max_temp"/>
+                    <field name="type"/>
+                </tree>
+            </field>
+        </record>
+        <!-- fishing.tunnel window -->
+        <record id="config_tunnels_act" model="ir.actions.act_window">
+            <field name="name">Tunnels</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fishing.tunnel</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- fishing.quality form view -->
+        <record id="fishing_quality_config_form" model="ir.ui.view">
+            <field name="name">fishing.quality.form</field>
+            <field name="model">fishing.quality</field>
+            <field name="arch" type="xml">
+                <form string="Tunnel">
+                    <sheet>
+
+                        <div class="oe_title">
+                            <h1>
+                                <field name="code" placeholder="Code"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name"/>
+
+                            </group>
+                            <group>
+                                <field name="product_ids" widget="many2many_tags" options="{'no_create': '1'}"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="description"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- fishing.quality tree view -->
+        <record id="fishing_quality_config_tree" model="ir.ui.view">
+            <field name="name">fishing.quality.tree</field>
+            <field name="model">fishing.quality</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="product_ids"/>
+                </tree>
+            </field>
+        </record>
+        <!-- fishing.quality window -->
+        <record id="config_quality_act" model="ir.actions.act_window">
+            <field name="name">Quality categories</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fishing.quality</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- fishing.time tree view -->
+        <record id="fishing_time_config_tree" model="ir.ui.view">
+            <field name="name">fishing.time.tree</field>
+            <field name="model">fishing.time</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="operation"/>
+                    <field name="quantity"/>
+                    <field name="time"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- fishing.time window -->
+        <record id="config_time_act" model="ir.actions.act_window">
+            <field name="name">Operation time</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fishing.time</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <!-- fishing.letter window -->
+        <record id="config_letters_act" model="ir.actions.act_window">
+            <field name="name">Letters</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fishing.letter</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem name="Configuration"
+                  id="fishing_config_root_menu"
+                  parent="base.menu_sc_root"
+                  sequence="8"
+                  groups="fishing_v2.fishing_admin"
+        />
+
+        <menuitem name="Tunnels"
+                  id="fishing_config_tunnels"
+                  parent="fishing_v2.fishing_config_root_menu"
+                  sequence="1"
+                  action="fishing_v2.config_tunnels_act"
+        />
+        <menuitem name="Quality"
+                  id="fishing_config_quality"
+                  parent="fishing_v2.fishing_config_root_menu"
+                  sequence="2"
+                  action="fishing_v2.config_quality_act"
+        />
+        <menuitem name="Time"
+                  id="fishing_config_time"
+                  parent="fishing_v2.fishing_config_root_menu"
+                  sequence="3"
+                  action="fishing_v2.config_time_act"
+        />
+        <menuitem name="Letters"
+                  id="fishing_config_letters"
+                  parent="fishing_v2.fishing_config_root_menu"
+                  sequence="4"
+                  action="fishing_v2.config_letters_act"
+        />
+
+    </data>
+</odoo>

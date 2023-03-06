@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="confirmation_vente_template">
+            <t t-call="web.basic_layout">
+                <h3 style="text-align: right">Nouadhibou le :
+                    <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d-%m-%Y')"/>
+                </h3>
+
+
+                <t t-foreach="docs" t-as="doc">
+                    <br></br>
+                    <br></br>
+                    <h3 style="text-align: left">
+                        Réf:
+                        <span t-field="doc.name"/>
+                    </h3>
+
+
+                    <div class="page">
+                        <br></br>
+
+                        <br></br>
+                        <br></br>
+
+                        <h2 class="text-center font-weight-bold ; text-align: right">A Monsieur le Directeur Général de
+                            la <br></br> SMCP Nouadhibou
+                        </h2>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <h2>
+                            Object:Confirmation de vente
+                        </h2>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+
+                        <div class="text-center">
+                        </div>
+
+                        <h3>
+                            Monsieur,
+                            par la présente , nous vous confirmons la vente de nos produits a notre clint:
+                            <span t-field="doc.partner_id"/>
+                            <br></br>
+                            voir stock ci-joint
+                            <br></br>
+                            Dans l'attente d'une suite favorable, veillez agréer Monsieur le Directeur, l'expression de
+                            nos salutations distinguées.
+                        </h3>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+
+                    </div>
+
+
+                </t>
+                <div style="text-align: right">
+                    <h2 class="text-align: right">Le Directeur général <br></br>Ahmed ould Ghaillani</h2>
+                </div>
+
+            </t>
+        </template>
+    </data>
+
+</odoo>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="packing_search_view" model="ir.ui.view">
+            <field name="name">fish.detail.search</field>
+            <field name="model">fishing.reception.detail</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="article"/>
+                    <field name="reception_id"/>
+                    <field name="type"/>
+                    <group>
+                        <filter string="Not packed" name="status_is_not_packed" domain="[('status','!=','6')]"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="traitement_tree_view_fpr_packing" model="ir.ui.view">
+            <field name="name">fishing.reception.detail.tree</field>
+            <field name="model">fishing.reception.detail</field>
+            <field name="arch" type="xml">
+                <tree string="Reception" create="false">
+                    <field name="article" readonly="True" options="{'no_open':True}"/>
+                    <field name="reception_id" readonly="True" options="{'no_open':True}"/>
+                    <field name="qte" readonly="True"/>
+                    <field name="type" readonly="True"/>
+                    <field name="quality" readonly="True"/>
+                    <field name="status" readonly="True"/>
+                    <field name="paking_start_date" readonly="True"/>
+                    <field name="paking_end_date" readonly="True"/>
+                    <button name="start_packaging" string="Start packaging" type="object" class="oe_highlight"/>
+                    <button name="start_manual_packaging" string="Manual Packing" type="object" class="btn-success"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="tunnel_window_packaging" model="ir.actions.act_window">
+            <field name="name">Packaging</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fishing.reception.detail</field>
+            <field name="view_mode">search,tree</field>
+            <field name="view_id" ref="traitement_tree_view_fpr_packing"/>
+            <field name="domain">[('qte','>','0'), ('status', 'in', ['2', '4', '5']), '|', '&amp;', ('will_be_tunneled', '=', True), ('tunnel_end_date', '!=', False), ('will_be_tunneled', '=', False)]
+            </field>
+            <field name="context">{'search_default_status_is_not_packed': 1}</field>
+            <field name="search_view_id" ref="packing_search_view"/>
+            <field name="help" type="html">
+                <p>
+                    No quantities to pack for now
+                </p>
+                <p>
+                    Treated and/or tunneled quantities will be shown here
+                </p>
+            </field>
+
+        </record>
+
+        <menuitem name="Packaging"
+                  id="menu_sc_packaging"
+                  parent="fishing_operations"
+                  sequence="5"
+                  action="tunnel_window_packaging"
+                  groups="fishing_admin,group_has_pcking"
+        />
+    </data>
+</odoo>

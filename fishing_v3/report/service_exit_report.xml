@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="service_exit_report_template">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <t t-foreach="docs" t-as="o">
+                        <div class="page">
+                            <h3 class="text-center">Stock
+                                <t t-esc="o.ref"/>
+                                sheet
+
+                            </h3>
+                            <div class="text-right">Date :
+                                <t t-esc="o.create_date"/>
+                            </div>
+                            <ul style="line-height: 45px;">
+
+
+                                <li>
+                                    <strong>Customer :</strong>
+                                    <t t-esc="o.customer_id.name"/>
+                                </li>
+
+
+                                <li>
+                                    <strong>Product :</strong>
+                                    <br/>
+                                    <table class="table" style="width: 100%">
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">
+                                                    <span t-field="o.category_id.display_name"/>
+                                                </th>
+                                                <td>
+                                                    <span t-field="o.qte"/>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

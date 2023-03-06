@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--  production fishing.cost.direct form view -->
+        <record id="fishing_cost_direct_form" model="ir.ui.view">
+            <field name="name">fishing.cost.direct.form</field>
+            <field name="model">fishing.cost.direct</field>
+            <field name="arch" type="xml">
+                <form string="Direct costs">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="ref"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="date_from" required="1"/>
+                                <field name="date_to" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="reception_ids" widget="many2many_tags" options="{'no_create': '1'}"/>
+                                <field name="total"/>
+                                <field name="unit_charge"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Expenses">
+                                <div>
+                                    <h1 class="text-center">
+                                        Les dépenses directs
+                                    </h1>
+                                </div>
+                                <group>
+                                    <group>
+                                        <field name="consumable"/>
+                                        <field name="other_costs"/>
+                                    </group>
+                                    <group>
+                                        <field name="workforce"/>
+
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Charges">
+                                <div>
+                                    <h1 class="text-center">
+                                        Charge direct sur les produits
+                                    </h1>
+                                </div>
+                                <field name="charge_ids">
+                                    <tree>
+                                        <field name="product"/>
+                                        <field name="quantity"/>
+                                        <field name="charge"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--  production fishing.cost.direct tree view -->
+        <record id="fishing_cost_direct_tree" model="ir.ui.view">
+            <field name="name">fishing.cost.direct.tree</field>
+            <field name="model">fishing.cost.direct</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ref"/>
+                    <field name="name"/>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                    <field name="reception_ids"/>
+                    <field name="workforce"/>
+                    <field name="other_costs"/>
+                    <field name="total"/>
+                </tree>
+            </field>
+        </record>
+        <!--  production fishing.cost.direct action -->
+        <record id="action_direct_costs" model="ir.actions.act_window">
+            <field name="name">Direct costs</field>
+            <field name="res_model">fishing.cost.direct</field>
+            <field name="view_mode">tree,kanban,form</field>
+        </record>
+
+        <!--  production fishing.cost.indirect form view -->
+        <record id="fishing_cost_indirect_form" model="ir.ui.view">
+            <field name="name">fishing.cost.indirect.form</field>
+            <field name="model">fishing.cost.indirect</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="ref"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <label for="date_from" string="Period"/>
+                                <div>
+                                    <field name="date_from" class="oe_inline" required="1"/>
+                                    -
+                                    <field name="date_to" class="oe_inline" readonly="1"/>
+                                </div>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="salary"/>
+                            </group>
+                            <group>
+                                <field name="electricity"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="water"/>
+                            </group>
+                            <group>
+                                <field name="other_charges"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--  production fishing.cost.indirect tree view -->
+        <record id="fishing_cost_indirect_tree" model="ir.ui.view">
+            <field name="name">fishing.cost.indirect.tree</field>
+            <field name="model">fishing.cost.indirect</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ref"/>
+                    <field name="name"/>
+                    <field name="salary"/>
+                    <field name="electricity"/>
+                    <field name="water"/>
+                    <field name="other_charges"/>
+                    <field name="total"/>
+                </tree>
+            </field>
+        </record>
+        <!--  production fishing.cost.indirect action -->
+        <record id="action_indirect_costs" model="ir.actions.act_window">
+            <field name="name">Indirect costs</field>
+            <field name="res_model">fishing.cost.indirect</field>
+            <field name="view_mode">tree,kanban,form</field>
+        </record>
+
+        <!--  production fishing.cost.report form view -->
+        <record id="fishing_cost_report_form" model="ir.ui.view">
+            <field name="name">fishing.cost.report.form</field>
+            <field name="model">fishing.cost.report</field>
+            <field name="arch" type="xml">
+                <form string="Direct costs">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="ref"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="date_from"/>
+                                <field name="date_to"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="total_purchase"/>
+                                <field name="total_sale"/>
+                            </group>
+                            <group>
+                                <field name="total_direct_costs"/>
+                                <field name="total_indirect_costs"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Details">
+                                <field name="report_lines" mode='tree,form' colspan='4' nolabel='1'
+                                       widget='one2many_list'>
+                                    <tree context="{'group_by':'product'}" widget='one2many_list'>
+                                        <field name="product"/>
+                                        <field name="quantity"/>
+                                        <field name="sale_price"/>
+                                        <field name="purchase_price"/>
+                                        <field name="month_sale_price"/>
+                                        <field name="direct_charge"/>
+                                        <field name="indirect_charge"/>
+                                        <field name="cost"/>
+                                        <field name="marge"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--  production fishing.cost.report tree view -->
+        <record id="fishing_cost_report_tree" model="ir.ui.view">
+            <field name="name">fishing.cost.report.tree</field>
+            <field name="model">fishing.cost.report</field>
+            <field name="arch" type="xml">
+                <tree create="0" edit="0">
+                    <field name="ref"/>
+                    <field name="name"/>
+                    <field name="total_purchase"/>
+                    <field name="total_sale"/>
+                    <field name="total_direct_costs"/>
+                    <field name="total_indirect_costs"/>
+                </tree>
+            </field>
+        </record>
+        <!--  production fishing.cost.report action -->
+        <record id="action_cost_reports" model="ir.actions.act_window">
+            <field name="name">Cost reports</field>
+            <field name="res_model">fishing.cost.report</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_fishing_cost_root" name="Costs" parent="base.menu_sc_root" sequence="7"/>
+        <menuitem id="menu_fishing_cost_direct" name="Direct costs" parent="menu_fishing_cost_root"
+                  action="action_direct_costs" sequence="1"/>
+        <menuitem id="menu_fishing_cost_indirect" name="Indirect costs" parent="menu_fishing_cost_root"
+                  action="action_indirect_costs" sequence="2"/>
+        <menuitem id="menu_fishing_cost_report" name="Reports" parent="menu_fishing_cost_root"
+                  action="action_cost_reports" sequence="3"/>
+    </data>
+</odoo>

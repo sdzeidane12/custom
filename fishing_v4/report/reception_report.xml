@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="reception_report_template">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <t t-foreach="docs" t-as="o">
+                        <div class="page">
+
+                            <table style="width: 100%">
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 50%">
+                                            <h1 class="text-center">Reception
+                                                <t t-esc="o.ref"/>
+                                            </h1>
+                                        </td>
+                                        <td style="width: 50%">
+                                            <img t-if="o.qr_code" t-att-src="image_data_uri(o.qr_code)"
+                                                 class="float-right" width="100px" alt="Logo"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="text-right">Date :
+                                <span t-field="o.create_date" widget="date"/>
+                            </div>
+                            <ul style="line-height: 45px;">
+                                <li>
+                                    <strong>Type :</strong>
+                                    <t t-esc="o.type"/>
+                                </li>
+                                <t t-if="o.type == 'production'">
+                                    <li>
+                                        <strong>Fish seller :</strong>
+                                        <t t-esc="o.mareyeur.name"/>
+                                    </li>
+                                </t>
+                                <t t-if="o.type == 'service'">
+                                    <li>
+                                        <strong>Customer :</strong>
+                                        <t t-esc="o.customer_id.name"/>
+                                    </li>
+                                </t>
+
+                                <li>
+                                    <strong>Products :</strong>
+                                    <br/>
+                                    <table class="table table-bordered" style="width: 100%">
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">
+                                                    Product Name
+                                                </th>
+                                                <th>
+                                                    Quantity
+                                                </th>
+                                                <th>
+                                                    Quality
+                                                </th>
+                                            </tr>
+                                            <t t-foreach="o.reception_ids1" t-as="line">
+                                                <tr>
+                                                    <td scope="row">
+                                                        <span t-field="line.article.display_name"/>
+                                                    </td>
+                                                    <td>
+                                                        <span t-field="line.qte"/>
+                                                    </td>
+                                                    <td>
+                                                        <span t-field="line.quality"/>
+                                                    </td>
+                                                </tr>
+                                            </t>
+                                        </tbody>
+                                    </table>
+                                </li>
+                                <t t-if="o.type == 'service'">
+                                    <li>
+                                        <strong>Ordered services :</strong>
+                                        <ul style="line-height: 45px;">
+                                            <t t-if="o.treatment_ordered">
+                                                <li>Treatment</li>
+                                            </t>
+                                            <t t-if="o.tunnel_ordered">
+                                                <li>Tunnel</li>
+                                            </t>
+                                            <t t-if="o.packaging_ordered">
+                                                <li>Packaging</li>
+                                            </t>
+                                        </ul>
+                                    </li>
+                                </t>
+
+                            </ul>
+
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>

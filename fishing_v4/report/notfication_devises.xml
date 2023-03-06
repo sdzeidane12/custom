@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="notfication_devises_template">
+            <t t-call="web.basic_layout">
+                <h3 style="text-align: right">Nouadhibou le :
+                    <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d-%m-%Y')"/>
+                </h3>
+
+
+                <t t-foreach="docs" t-as="doc">
+                    <br></br>
+                    <br></br>
+                    <h3 style="text-align: left">
+                        Réf:
+                        <span t-field="doc.name"/>
+                    </h3>
+
+
+                    <div class="page">
+                        <br></br>
+
+                        <br></br>
+                        <br></br>
+
+                        <h2 class="text-center font-weight-bold ; text-align: right">A Monsieur le Directeur Général de
+                            la <br></br> BAE Nouakchott
+                        </h2>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <h2>
+                            Object:Notfication de devises
+                        </h2>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+
+                        <div class="text-center">
+                        </div>
+
+                        <h3>
+                            Monsieur, <br></br>
+                            Nous venons par la présente vous demende de bien vouloir notifier pour la
+                            SMCP un montant de
+                          <t t-set="sum_price_subtotal" t-value="0"/>
+                            <t t-foreach="doc.order_line" t-as="line">
+                                <t t-set="sum_price_subtotal"
+                                   t-value="sum_price_subtotal+line.price_subtotal"/>
+                            </t>
+                            <t t-esc="sum_price_subtotal"/>  UM order de MELLINO SL P/C Interpesca Sarl.
+
+            
+
+
+                            <br></br>
+                            En vous souhaitant donne réception et dans l'attente d'une suite favorable , <br></br>
+                            veuillez agréer, Monsieur le directeur, l'expression de nos trés hautes considérations.
+                            <br></br>
+
+                        </h3>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+
+                    </div>
+
+
+                </t>
+                <div style="text-align: right">
+                    <h2 class="text-align: right">Le Directeur général <br></br>Ahmed ould Ghaillani</h2>
+                </div>
+
+            </t>
+        </template>
+    </data>
+
+</odoo>

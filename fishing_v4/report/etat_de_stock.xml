@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="etat_de_stock_template">
+            <t t-call="web.basic_layout">
+                <h3 style="text-align: right">Nouadhibou le :
+                    <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d-%m-%Y')"/>
+                </h3>
+
+                <t t-foreach="docs" t-as="doc">
+
+
+                    <div class="page">
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <h2 class="text-center font-weight-bold">ETAT DE STOCK DE LA COMMANDE NUMERO :
+                            <span t-field="doc.name"/>
+                        </h2>
+
+                        <br></br>
+                        <br></br>
+                        <br></br><br></br>
+
+                        <h1 class="text-center font-weight-bold">GCM/SMCP</h1>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+
+                        <div class="text-center">
+                        </div>
+
+
+                        <table class="table table-sm" style="border-bottom: 5px solid white !important;">
+                            <thead>
+                                <tr class="text-center" style="background-color:#E0E0E0;">
+                                    <th style="border: 1px solid black;border-collapse: collapse;">ESPECES</th>
+                                    <th style="border: 1px solid black;border-collapse: collapse;">NBRES DE CARTONS</th>
+                                </tr>
+                            </thead>
+
+
+                            <tbody>
+
+                                <tr t-foreach="doc.order_line" t-as="line">
+                                    <td class="text-center">
+                                        <span t-field="line.product_id"/>
+                                    </td>
+                                    <td class="text-center">
+                                        <span t-field="line.product_packaging_qty"/>
+
+                                    </td>
+
+                                </tr>
+                            </tbody>
+
+                        </table>
+                        <div style="text-align: right">
+                            <h1 style="text-align: right">Total:</h1>
+                            <t t-set="sum_product_packaging_qty" t-value="0"/>
+                            <t t-foreach="doc.order_line" t-as="line">
+                                <t t-set="sum_product_packaging_qty"
+                                   t-value="sum_product_packaging_qty+line.product_packaging_qty"/>
+                            </t>
+                            <t t-esc="sum_product_packaging_qty"/>
+                        </div>
+
+
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+
+</odoo>
